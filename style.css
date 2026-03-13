@@ -1,0 +1,113 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+    background:#f5f5f5;
+}
+
+
+nav{
+    background:white;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-container{
+    width:1000px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 0;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#333;
+    font-weight:500;
+}
+
+
+.hero{
+    width:1000px;
+    margin:60px auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.hero-text{
+    width:60%;
+}
+
+.hero h1{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    color:#555;
+    line-height:1.6;
+}
+
+.hero img{
+    width:200px;
+    border-radius:50%;
+}
+
+
+#team{
+    width:1000px;
+    margin:auto;
+    text-align:center;
+}
+
+.cards{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+.card{
+    width:220px;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card img{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.card span{
+    color:#777;
+    font-size:14px;
+}
+
+.card p{
+    font-size:14px;
+    color:#444;
+}
+
+
+footer{
+    text-align:center;
+    padding:30px;
+    margin-top:60px;
+    background:white;
+    color:#666;
+}
