@@ -4,792 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CPT208 Process Portfolio</title>
-  <style>
-    :root {
-      --bg: #f7f8fc;
-      --surface: rgba(255,255,255,0.72);
-      --surface-strong: rgba(255,255,255,0.92);
-      --text: #121826;
-      --muted: #586174;
-      --line: rgba(18,24,38,0.08);
-      --accent: #4f46e5;
-      --accent-2: #06b6d4;
-      --accent-3: #f59e0b;
-      --good: #16a34a;
-      --shadow: 0 20px 60px rgba(31,41,55,0.12);
-      --radius-xl: 28px;
-      --radius-lg: 20px;
-      --radius-md: 16px;
-      --max: 1200px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(79,70,229,0.16), transparent 28%),
-        radial-gradient(circle at top right, rgba(6,182,212,0.13), transparent 24%),
-        linear-gradient(180deg, #f8faff 0%, #f7f8fc 55%, #f3f4f8 100%);
-      line-height: 1.6;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-
-    .container {
-      width: min(var(--max), calc(100% - 32px));
-      margin: 0 auto;
-    }
-
-    .glass {
-      background: var(--surface);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border: 1px solid rgba(255,255,255,0.6);
-      box-shadow: var(--shadow);
-    }
-
-    .nav-wrap {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      padding: 16px 0;
-      background: linear-gradient(180deg, rgba(247,248,252,0.92), rgba(247,248,252,0.6), transparent);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      padding: 14px 18px;
-      border-radius: 999px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-    }
-
-    .brand-badge {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: white;
-      display: grid;
-      place-items: center;
-      font-weight: 800;
-      box-shadow: 0 12px 24px rgba(79,70,229,0.28);
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: flex-end;
-    }
-
-    .nav-links a {
-      font-size: 14px;
-      color: var(--muted);
-      padding: 10px 14px;
-      border-radius: 999px;
-      transition: 0.25s ease;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--text);
-      background: rgba(79,70,229,0.08);
-    }
-
-    .hero {
-      padding: 38px 0 34px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 28px;
-      align-items: stretch;
-    }
-
-    .hero-card, .hero-side {
-      border-radius: var(--radius-xl);
-      overflow: hidden;
-      position: relative;
-    }
-
-    .hero-card {
-      padding: 40px;
-      min-height: 600px;
-      background:
-        linear-gradient(145deg, rgba(255,255,255,0.94), rgba(247,248,255,0.74)),
-        radial-gradient(circle at top right, rgba(79,70,229,0.14), transparent 30%);
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--accent);
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(79,70,229,0.1);
-      margin-bottom: 18px;
-    }
-
-    h1, h2, h3, h4 { line-height: 1.08; letter-spacing: -0.04em; margin: 0; }
-    h1 { font-size: clamp(2.9rem, 6vw, 5.1rem); max-width: 10ch; }
-    h2 { font-size: clamp(2rem, 4vw, 3.1rem); }
-    h3 { font-size: 1.3rem; }
-    p { margin: 0; color: var(--muted); }
-
-    .hero-sub {
-      margin-top: 18px;
-      max-width: 60ch;
-      font-size: 1.05rem;
-    }
-
-    .hero-actions {
-      margin-top: 24px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px 18px;
-      border-radius: 999px;
-      font-weight: 700;
-      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
-      border: 1px solid transparent;
-    }
-
-    .btn-primary {
-      color: white;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      box-shadow: 0 16px 30px rgba(79,70,229,0.24);
-    }
-
-    .btn-secondary {
-      color: var(--text);
-      background: rgba(255,255,255,0.72);
-      border-color: rgba(18,24,38,0.08);
-    }
-
-    .btn:hover { transform: translateY(-2px); }
-
-    .hero-stats {
-      margin-top: 28px;
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .stat {
-      padding: 18px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.82);
-      border: 1px solid rgba(18,24,38,0.06);
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 1.6rem;
-      color: var(--text);
-      letter-spacing: -0.04em;
-    }
-
-    .stat span {
-      color: var(--muted);
-      font-size: 0.93rem;
-    }
-
-    .floating-notes {
-      position: absolute;
-      inset: auto 28px 28px auto;
-      display: grid;
-      gap: 14px;
-      width: min(280px, 52%);
-    }
-
-    .note {
-      padding: 18px;
-      border-radius: 20px;
-      border: 1px solid rgba(18,24,38,0.08);
-      background: rgba(255,255,255,0.92);
-      box-shadow: 0 20px 40px rgba(31,41,55,0.08);
-    }
-
-    .note.kpi { background: linear-gradient(135deg, rgba(254,249,195,0.95), rgba(255,255,255,0.96)); }
-    .note.ai { background: linear-gradient(135deg, rgba(224,242,254,0.95), rgba(255,255,255,0.96)); }
-
-    .hero-side {
-      padding: 24px;
-      display: grid;
-      gap: 18px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,255,255,0.64));
-    }
-
-    .mock-window {
-      border-radius: 22px;
-      border: 1px solid rgba(18,24,38,0.08);
-      background: white;
-      box-shadow: 0 20px 50px rgba(31,41,55,0.12);
-      overflow: hidden;
-    }
-
-    .mock-top {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 16px;
-      border-bottom: 1px solid var(--line);
-      background: linear-gradient(180deg, #fefefe, #f6f7fb);
-    }
-
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #d1d5db;
-    }
-
-    .mock-body {
-      padding: 20px;
-      display: grid;
-      gap: 14px;
-    }
-
-    .skeleton-title,
-    .skeleton-line,
-    .skeleton-box {
-      background: linear-gradient(90deg, rgba(79,70,229,0.08), rgba(6,182,212,0.12), rgba(79,70,229,0.08));
-      background-size: 200% 100%;
-      animation: shimmer 3.2s linear infinite;
-      border-radius: 12px;
-    }
-
-    .skeleton-title { height: 22px; width: 56%; }
-    .skeleton-line { height: 12px; }
-    .skeleton-box { height: 90px; }
-
-    @keyframes shimmer {
-      0% { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
-    }
-
-    .hero-mini-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .mini-panel {
-      padding: 20px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.9);
-      border: 1px solid rgba(18,24,38,0.06);
-    }
-
-    section {
-      padding: 28px 0;
-    }
-
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 18px;
-      margin-bottom: 24px;
-    }
-
-    .section-head p { max-width: 60ch; }
-
-    .grid-2, .grid-3, .grid-4 {
-      display: grid;
-      gap: 20px;
-    }
-
-    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-
-    .card {
-      padding: 22px;
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(255,255,255,0.68);
-      min-height: 100%;
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-
-    .card:hover { transform: translateY(-4px); box-shadow: 0 24px 50px rgba(31,41,55,0.12); }
-
-    .card-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(79,70,229,0.1);
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .list {
-      display: grid;
-      gap: 12px;
-      padding: 0;
-      margin: 16px 0 0;
-      list-style: none;
-    }
-
-    .list li {
-      display: grid;
-      grid-template-columns: 24px 1fr;
-      gap: 12px;
-      align-items: start;
-      color: var(--muted);
-    }
-
-    .check {
-      width: 24px;
-      height: 24px;
-      border-radius: 8px;
-      display: grid;
-      place-items: center;
-      background: rgba(22,163,74,0.12);
-      color: var(--good);
-      font-weight: 900;
-      font-size: 14px;
-    }
-
-    .timeline {
-      position: relative;
-      display: grid;
-      gap: 18px;
-    }
-
-    .timeline::before {
-      content: "";
-      position: absolute;
-      left: 17px;
-      top: 12px;
-      bottom: 12px;
-      width: 2px;
-      background: linear-gradient(180deg, var(--accent), rgba(6,182,212,0.3));
-    }
-
-    .timeline-item {
-      position: relative;
-      display: grid;
-      grid-template-columns: 48px 1fr;
-      gap: 18px;
-      align-items: start;
-    }
-
-    .timeline-dot {
-      width: 36px;
-      height: 36px;
-      margin-top: 2px;
-      border-radius: 50%;
-      background: white;
-      border: 2px solid rgba(79,70,229,0.28);
-      box-shadow: 0 8px 16px rgba(79,70,229,0.16);
-    }
-
-    .phase {
-      padding: 16px 18px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.85);
-      border: 1px solid rgba(18,24,38,0.06);
-    }
-
-    .phase strong {
-      display: block;
-      margin-bottom: 6px;
-      font-size: 1.03rem;
-    }
-
-    .comparison-table {
-      overflow: auto;
-      border-radius: 20px;
-      border: 1px solid rgba(18,24,38,0.08);
-      background: rgba(255,255,255,0.84);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 720px;
-    }
-
-    th, td {
-      padding: 16px 18px;
-      text-align: left;
-      border-bottom: 1px solid rgba(18,24,38,0.07);
-      vertical-align: top;
-    }
-
-    th {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--muted);
-      background: rgba(248,250,252,0.85);
-    }
-
-    .persona {
-      display: grid;
-      grid-template-columns: 84px 1fr;
-      gap: 18px;
-      align-items: start;
-    }
-
-    .avatar {
-      width: 84px;
-      height: 84px;
-      border-radius: 24px;
-      background: linear-gradient(135deg, rgba(79,70,229,0.14), rgba(6,182,212,0.18));
-      display: grid;
-      place-items: center;
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: var(--accent);
-    }
-
-    .persona-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .tag {
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--muted);
-      background: rgba(18,24,38,0.05);
-    }
-
-    .journey {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .journey-step {
-      position: relative;
-      padding: 18px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.9);
-      border: 1px solid rgba(18,24,38,0.06);
-      min-height: 200px;
-    }
-
-    .journey-step::after {
-      content: "→";
-      position: absolute;
-      top: 18px;
-      right: -12px;
-      color: rgba(79,70,229,0.32);
-      font-size: 26px;
-      font-weight: 900;
-    }
-
-    .journey-step:last-child::after { display: none; }
-
-    .pain {
-      margin-top: 12px;
-      padding: 12px;
-      border-radius: 14px;
-      background: rgba(245,158,11,0.1);
-      color: #9a6700;
-      font-size: 0.93rem;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .gallery-card {
-      padding: 14px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.92);
-      border: 1px solid rgba(18,24,38,0.06);
-      overflow: hidden;
-    }
-
-    .sketch {
-      aspect-ratio: 1 / 1;
-      border-radius: 16px;
-      background:
-        linear-gradient(180deg, rgba(248,250,252,0.75), rgba(255,255,255,0.92)),
-        repeating-linear-gradient(0deg, transparent 0 18px, rgba(18,24,38,0.03) 18px 19px),
-        repeating-linear-gradient(90deg, transparent 0 18px, rgba(18,24,38,0.03) 18px 19px);
-      border: 1px dashed rgba(18,24,38,0.14);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .sketch::before, .sketch::after {
-      content: "";
-      position: absolute;
-      inset: 16% 16%;
-      border: 2px solid rgba(18,24,38,0.16);
-      border-radius: 16px;
-      transform: rotate(-4deg);
-    }
-
-    .sketch::after {
-      inset: 24% 24%;
-      transform: rotate(5deg);
-    }
-
-    .proto-frame {
-      border-radius: 28px;
-      padding: 18px;
-      background: linear-gradient(145deg, rgba(17,24,39,0.98), rgba(31,41,55,0.98));
-      box-shadow: 0 28px 60px rgba(17,24,39,0.24);
-    }
-
-    .phone {
-      width: min(320px, 100%);
-      margin: 0 auto;
-      border-radius: 32px;
-      padding: 14px;
-      background: linear-gradient(180deg, #1f2937, #0f172a);
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .phone-screen {
-      min-height: 560px;
-      border-radius: 24px;
-      padding: 20px;
-      background: linear-gradient(180deg, #fbfbff, #eef3ff 80%, #f6f8ff);
-      display: grid;
-      gap: 16px;
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .feature-block {
-      padding: 14px;
-      border-radius: 18px;
-      background: white;
-      border: 1px solid rgba(18,24,38,0.06);
-      min-height: 100px;
-    }
-
-    .architecture {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
-      align-items: stretch;
-    }
-
-    .arch-node {
-      padding: 18px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.9);
-      border: 1px solid rgba(18,24,38,0.06);
-      position: relative;
-      text-align: center;
-    }
-
-    .arch-node:not(:last-child)::after {
-      content: "→";
-      position: absolute;
-      top: 50%;
-      right: -14px;
-      transform: translateY(-50%);
-      font-size: 22px;
-      color: rgba(79,70,229,0.36);
-      font-weight: 900;
-    }
-
-    .quote {
-      padding: 18px;
-      border-radius: 20px;
-      background: linear-gradient(135deg, rgba(224,231,255,0.85), rgba(255,255,255,0.95));
-      border: 1px solid rgba(79,70,229,0.12);
-    }
-
-    .before-after {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .ba-panel {
-      padding: 18px;
-      border-radius: 22px;
-      background: rgba(255,255,255,0.9);
-      border: 1px solid rgba(18,24,38,0.06);
-    }
-
-    .wire {
-      aspect-ratio: 16 / 10;
-      border-radius: 18px;
-      border: 1px dashed rgba(18,24,38,0.16);
-      background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(248,250,252,0.98));
-      position: relative;
-      overflow: hidden;
-      margin-top: 14px;
-    }
-
-    .wire .bar { position: absolute; left: 14px; right: 14px; height: 10px; border-radius: 999px; background: rgba(18,24,38,0.08); }
-    .wire .bar:nth-child(1) { top: 14px; width: 38%; }
-    .wire .bar:nth-child(2) { top: 38px; width: calc(100% - 28px); }
-    .wire .box { position: absolute; border-radius: 16px; border: 1px solid rgba(18,24,38,0.08); background: rgba(79,70,229,0.06); }
-    .wire .box.a { left: 14px; top: 68px; width: calc(50% - 21px); height: 92px; }
-    .wire .box.b { right: 14px; top: 68px; width: calc(50% - 21px); height: 92px; }
-    .wire .box.c { left: 14px; right: 14px; bottom: 14px; height: 88px; }
-
-    .team-card {
-      display: grid;
-      gap: 14px;
-    }
-
-    .team-photo {
-      aspect-ratio: 4 / 4.5;
-      border-radius: 22px;
-      overflow: hidden;
-      background: linear-gradient(135deg, rgba(79,70,229,0.16), rgba(6,182,212,0.2));
-      display: grid;
-      place-items: center;
-      font-size: 2.4rem;
-      font-weight: 800;
-      color: white;
-    }
-
-    .role {
-      font-weight: 700;
-      color: var(--accent);
-      font-size: 0.95rem;
-    }
-
-    .footer {
-      padding: 34px 0 50px;
-    }
-
-    .footer-card {
-      padding: 28px;
-      border-radius: 28px;
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .refs {
-      display: grid;
-      gap: 14px;
-    }
-
-    .muted { color: var(--muted); }
-    .small { font-size: 0.95rem; }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity .7s ease, transform .7s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 1100px) {
-      .hero-grid,
-      .grid-4,
-      .gallery,
-      .journey,
-      .architecture {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .hero-card { min-height: auto; }
-      .floating-notes { position: static; width: 100%; margin-top: 22px; }
-    }
-
-    @media (max-width: 900px) {
-      .nav { border-radius: 28px; }
-      .nav, .section-head, .hero-grid, .grid-2, .grid-3, .grid-4, .hero-mini-grid,
-      .before-after, .architecture, .journey, .gallery {
-        grid-template-columns: 1fr;
-      }
-
-      .nav {
-        display: grid;
-        gap: 14px;
-      }
-
-      .nav-links { justify-content: flex-start; }
-      .hero-card, .hero-side { padding: 22px; }
-      .hero-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .section-head { align-items: start; }
-      .persona { grid-template-columns: 1fr; }
-      .journey-step::after, .arch-node::after { display: none !important; }
-    }
-
-    @media (max-width: 640px) {
-      .container { width: min(var(--max), calc(100% - 20px)); }
-      .hero-card { padding: 20px; }
-      .hero-stats { grid-template-columns: 1fr; }
-      h1 { max-width: 100%; }
-      .btn { width: 100%; }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <canvas id="donutCanvas"></canvas>
+  <div class="cinematic-bg" aria-hidden="true"></div>
+
   <div class="nav-wrap">
     <div class="container">
-      <nav class="nav glass">
+      <nav class="nav">
         <div class="brand">
-          <div class="brand-badge">C</div>
           <div>
             <div>CPT208 Process Portfolio</div>
-            <div class="muted small">Human-Centric Computing · Week 10 Submission</div>
+            <div class="sub">Human-Centric Computing · Week 10 Submission</div>
           </div>
         </div>
         <div class="nav-links">
@@ -808,18 +38,18 @@
 
   <main>
     <section class="hero" id="overview">
-      <div class="container hero-grid">
-        <div class="hero-card glass reveal">
+      <div class="container">
+        <div class="hero-content reveal">
           <div class="eyebrow">Designing Playful Experiences · Group B2-1</div>
-          <h1>Build a portfolio that looks like a real HCI case study.</h1>
+          <h1>Welcome to our Process Portfolio</h1>
           <p class="hero-sub">
             This template is designed for the CPT208 process portfolio: a hosted GitHub page that documents your motivation, research, personas, user journey, alternatives, prototype, evaluation, team contributions, and technical reflection in one polished experience.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#motivation">Explore the portfolio</a>
-            <a class="btn btn-secondary" href="#prototype">View prototype section</a>
+            <a class="btn btn-primary" href="#motivation"><span>Explore the portfolio</span></a>
+            <a class="btn btn-secondary" href="#prototype"><span>View prototype section</span></a>
           </div>
-
+          
           <div class="hero-stats">
             <div class="stat">
               <strong>4</strong>
@@ -838,65 +68,25 @@
               <span>Final deadline</span>
             </div>
           </div>
-
-          <div class="floating-notes">
-            <div class="note kpi">
-              <strong>Key requirement</strong>
-              <p class="small">If AI is used for coding, include a Technical Reflection that explains prompts, verification methods, and ethical considerations.</p>
-            </div>
-            <div class="note ai">
-              <strong>Submission tip</strong>
-              <p class="small">Replace every placeholder block with your own evidence: personas, photos, Figma link, usability testing, and iteration screenshots.</p>
-            </div>
-          </div>
         </div>
-
-        <aside class="hero-side glass reveal">
-          <div class="mock-window">
-            <div class="mock-top">
-              <div class="dot"></div><div class="dot"></div><div class="dot"></div>
-            </div>
-            <div class="mock-body">
-              <div class="skeleton-title"></div>
-              <div class="skeleton-line" style="width: 88%"></div>
-              <div class="skeleton-line" style="width: 76%"></div>
-              <div class="skeleton-box"></div>
-              <div class="skeleton-box" style="height: 128px"></div>
-            </div>
-          </div>
-          <div class="hero-mini-grid">
-            <div class="mini-panel">
-              <div class="chip">Portfolio</div>
-              <h3 style="margin-top: 12px;">Case-study layout</h3>
-              <p class="small" style="margin-top: 8px;">Designed to match the structure your coursework brief expects.</p>
-            </div>
-            <div class="mini-panel">
-              <div class="chip" style="background: rgba(245,158,11,0.14); color: #b45309;">System</div>
-              <h3 style="margin-top: 12px;">Prototype-ready</h3>
-              <p class="small" style="margin-top: 8px;">Includes sections for architecture, Figma, live demo, and responsive web app evidence.</p>
-            </div>
-          </div>
-        </aside>
       </div>
     </section>
 
     <section id="motivation">
       <div class="container">
         <div class="section-head reveal">
-          <div>
-            <div class="eyebrow">01 · Motivation & Research</div>
-            <h2>Frame the problem before you design the solution.</h2>
-          </div>
+          <div class="eyebrow">01 · Motivation & Research</div>
+          <h2>Frame the problem before you design the solution.</h2>
           <p>
             Your portfolio should show why this topic matters, what prior research and commercial products already do well, and where the opportunity for a more playful human-centered experience appears.
           </p>
         </div>
 
-        <div class="grid-2">
-          <article class="card glass reveal">
+        <div class="g2">
+          <article class="card reveal">
             <div class="card-top">
               <h3>Why this project matters</h3>
-              <span class="chip">200-word statement</span>
+              <span class="chip">200-word block</span>
             </div>
             <p>
               Replace this paragraph with your own motivation. Explain why your group selected this design track, what challenge you observed in the real world, and what kind of playful impact you hope to create for your target stakeholders.
@@ -908,7 +98,7 @@
             </ul>
           </article>
 
-          <article class="card glass reveal">
+          <article class="card reveal">
             <div class="card-top">
               <h3>Project roadmap</h3>
               <span class="chip">Weeks 1–10</span>
@@ -934,8 +124,8 @@
           </article>
         </div>
 
-        <div class="grid-2" style="margin-top: 20px;">
-          <article class="card glass reveal">
+        <div class="g2" style="margin-top: 24px;">
+          <article class="card reveal">
             <div class="card-top">
               <h3>Research gap: academic papers</h3>
               <span class="chip">4 papers</span>
@@ -943,39 +133,19 @@
             <div class="comparison-table">
               <table>
                 <thead>
-                  <tr>
-                    <th>Paper</th>
-                    <th>What it did well</th>
-                    <th>What it missed</th>
-                  </tr>
+                  <tr><th>Paper</th><th>What it did well</th><th>What it missed</th></tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Paper 01</td>
-                    <td>Strong interface concept, clear engagement mechanism, useful evaluation method.</td>
-                    <td>Limited inclusivity, weak long-term motivation, unclear deployment context.</td>
-                  </tr>
-                  <tr>
-                    <td>Paper 02</td>
-                    <td>Good social interaction design, thoughtful feedback loop, relevant target group.</td>
-                    <td>No playful progression system, little personalization, weak mobile experience.</td>
-                  </tr>
-                  <tr>
-                    <td>Paper 03</td>
-                    <td>Interesting narrative framing, robust literature foundation, clear persona alignment.</td>
-                    <td>Small sample size, limited evidence of iteration, no real-world deployment.</td>
-                  </tr>
-                  <tr>
-                    <td>Paper 04</td>
-                    <td>Useful persuasive mechanics, easy onboarding, good visual hierarchy.</td>
-                    <td>Lack of accessibility detail, low novelty, shallow reflection on ethics.</td>
-                  </tr>
+                  <tr><td>Paper 01</td><td>Strong interface concept, clear engagement mechanism, useful evaluation method.</td><td>Limited inclusivity, weak long-term motivation, unclear deployment context.</td></tr>
+                  <tr><td>Paper 02</td><td>Good social interaction design, thoughtful feedback loop, relevant target group.</td><td>No playful progression system, little personalization, weak mobile experience.</td></tr>
+                  <tr><td>Paper 03</td><td>Interesting narrative framing, robust literature foundation, clear persona alignment.</td><td>Small sample size, limited evidence of iteration, no real-world deployment.</td></tr>
+                  <tr><td>Paper 04</td><td>Useful persuasive mechanics, easy onboarding, good visual hierarchy.</td><td>Lack of accessibility detail, low novelty, shallow reflection on ethics.</td></tr>
                 </tbody>
               </table>
             </div>
           </article>
 
-          <article class="card glass reveal">
+          <article class="card reveal">
             <div class="card-top">
               <h3>Commercial product review</h3>
               <span class="chip">4 products</span>
@@ -983,33 +153,13 @@
             <div class="comparison-table">
               <table>
                 <thead>
-                  <tr>
-                    <th>Product</th>
-                    <th>Strengths</th>
-                    <th>Missed opportunities</th>
-                  </tr>
+                  <tr><th>Product</th><th>Strengths</th><th>Missed opportunities</th></tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Product A</td>
-                    <td>Easy navigation, strong community features, polished interaction design.</td>
-                    <td>Weak emotional design, not contextualized for your domain.</td>
-                  </tr>
-                  <tr>
-                    <td>Product B</td>
-                    <td>Good rewards system, habit loop, satisfying visual feedback.</td>
-                    <td>Does not address your user group’s pain points directly.</td>
-                  </tr>
-                  <tr>
-                    <td>Product C</td>
-                    <td>Useful content presentation, strong discoverability, recognizable patterns.</td>
-                    <td>Low playfulness and no collaborative experience.</td>
-                  </tr>
-                  <tr>
-                    <td>Product D</td>
-                    <td>Good notifications, effective gamification, scalable architecture.</td>
-                    <td>Accessibility issues and limited ethical transparency.</td>
-                  </tr>
+                  <tr><td>Product A</td><td>Easy navigation, strong community features, polished interaction design.</td><td>Weak emotional design, not contextualized for your domain.</td></tr>
+                  <tr><td>Product B</td><td>Good rewards system, habit loop, satisfying visual feedback.</td><td>Does not address your user group’s pain points directly.</td></tr>
+                  <tr><td>Product C</td><td>Useful content presentation, strong discoverability, recognizable patterns.</td><td>Low playfulness and no collaborative experience.</td></tr>
+                  <tr><td>Product D</td><td>Good notifications, effective gamification, scalable architecture.</td><td>Accessibility issues and limited ethical transparency.</td></tr>
                 </tbody>
               </table>
             </div>
@@ -1018,155 +168,193 @@
       </div>
     </section>
 
-<section id="requirements">
-  <div class="container">
-    <div class="section-head reveal">
-      <div>
-        <div class="eyebrow">02 · User Requirements</div>
-        <h2>Show who we design for, how they experience GoRunners, and what they actually need.</h2>
-      </div>
-      <p>
-        This section connects our stakeholder analysis, personas, user journey pain points, and three must-have requirements for a beginner-friendly running experience.
-      </p>
-    </div>
-
-    <div class="grid-2">
-      <article class="card glass reveal persona">
-        <div class="avatar">
-          <img src="img/persona1.png" alt="Primary persona photo">
-        </div>
-        <div>
-          <h3>Primary Persona</h3>
-          <p style="margin-top: 8px;">
-            Emily is a university student who wants to build a regular running habit for fitness, stress relief, and personal achievement.
+    <section id="requirements">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">02 · User Requirements</div>
+          <h2>Show who we design for, how they experience GoRunners, and what they actually need.</h2>
+          <p>
+            This section connects our stakeholder analysis, personas, user journey pain points, and three must-have requirements for a beginner-friendly running experience.
           </p>
-          <div class="persona-meta">
-            <span class="tag">Age: 20</span>
-            <span class="tag">Role: XJTLU student</span>
-            <span class="tag">Goal: Build a running habit</span>
-          </div>
-          <ul class="list">
-            <li><span class="check">✓</span><span><strong>Needs:</strong> Fast onboarding, simple run tracking, visible progress, and motivating feedback.</span></li>
-            <li><span class="check">✓</span><span><strong>Pain points:</strong> Existing running apps can feel boring, overwhelming, or too competitive for beginners.</span></li>
-            <li><span class="check">✓</span><span><strong>Motivation:</strong> Wants running to feel enjoyable, rewarding, and easy to continue every week.</span></li>
-          </ul>
         </div>
-      </article>
 
-      <article class="card glass reveal persona">
-        <div class="avatar">
-          <img src="img/persona2.png" alt="Seconary persona photo">
+        <div class="persona-grid">
+          <!-- PRIMARY PERSONA -->
+          <article class="persona-card reveal">
+            <div class="persona-card-header">
+              <div class="persona-avatar"><img src="img/persona1.png" alt="Primary persona photo"></div>
+              <div class="persona-header-text">
+                <span class="persona-label primary-label">Primary Persona</span>
+                <h3 class="persona-name">Emily</h3>
+                <p class="persona-subtitle">University student · Beginner runner · Looking for a sustainable and enjoyable running habit</p>
+              </div>
+            </div>
+            <div class="persona-quote">
+              <p>"I want running to become part of my weekly routine, but I need it to feel motivating and manageable rather than tiring or stressful."</p>
+            </div>
+            <div class="persona-tags">
+              <span class="ptag">Age: 20</span>
+              <span class="ptag">Role: XJTLU student</span>
+              <span class="ptag">Goal: Build a running habit</span>
+              <span class="ptag">Level: Beginner</span>
+            </div>
+            <div class="persona-bg-section">
+              <h4>Background</h4>
+              <p>Emily is a university student who wants to build a regular running habit for fitness, stress relief, and personal achievement. She has interest in improving her health, but her class schedule is busy and her motivation can be unstable. She prefers tools that are easy to start with and that offer clear, positive guidance instead of competitive pressure.</p>
+            </div>
+            <div class="persona-quad">
+              <div class="pquad-item needs">
+                <strong>Needs</strong>
+                <p>Fast onboarding, simple run tracking, visible progress, and motivating feedback that feels achievable.</p>
+              </div>
+              <div class="pquad-item pain">
+                <strong>Pain Points</strong>
+                <p>Existing running apps can feel boring, overwhelming, or too competitive for beginners.</p>
+              </div>
+              <div class="pquad-item motivation">
+                <strong>Motivation</strong>
+                <p>She wants running to feel enjoyable, rewarding, and easy to continue every week.</p>
+              </div>
+              <div class="pquad-item opportunity">
+                <strong>Design Opportunity</strong>
+                <p>Provide a welcoming entry point, beginner-friendly recommendations, and playful progress feedback.</p>
+              </div>
+            </div>
+            <ul class="persona-scenarios">
+              <li><span class="scenario-check">✓</span><span><strong>Typical scenario:</strong> Emily opens GoRunners after class to look for a beginner-friendly activity or a short training suggestion.</span></li>
+              <li><span class="scenario-check">✓</span><span><strong>Frustration:</strong> If the system looks too advanced or too complicated, she may lose confidence and leave quickly.</span></li>
+              <li><span class="scenario-check">✓</span><span><strong>Expectation:</strong> She wants clear next steps, achievable goals, and a sense of progress after each run.</span></li>
+            </ul>
+          </article>
+
+          <!-- SECONDARY PERSONA -->
+          <article class="persona-card reveal">
+            <div class="persona-card-header">
+              <div class="persona-avatar"><img src="img/persona2.png" alt="Secondary persona photo"></div>
+              <div class="persona-header-text">
+                <span class="persona-label secondary-label">Secondary Persona</span>
+                <h3 class="persona-name">Mr. Li</h3>
+                <p class="persona-subtitle">Retired resident · Light daily jogger · Wants a safe and simple jogging experience</p>
+              </div>
+            </div>
+            <div class="persona-quote">
+              <p>"I do not need a complicated app. I just want something simple, readable, and encouraging for my daily jogging."</p>
+            </div>
+            <div class="persona-tags">
+              <span class="ptag">Age: 67</span>
+              <span class="ptag">Role: Retired resident</span>
+              <span class="ptag">Goal: Maintain a healthy routine</span>
+              <span class="ptag">Level: Light jogger</span>
+            </div>
+            <div class="persona-bg-section">
+              <h4>Background</h4>
+              <p>Mr. Li is a retired older adult who does light daily jogging to maintain his health and wants a simple, safe, and encouraging experience. He already has the willingness to exercise regularly, but many fitness apps feel too complex and too crowded for him. He values clear instructions, easy navigation, and information that helps him feel safe and supported.</p>
+            </div>
+            <div class="persona-quad">
+              <div class="pquad-item needs">
+                <strong>Needs</strong>
+                <p>A simple interface, clear jogging guidance, easy progress tracking, and health-friendly support.</p>
+              </div>
+              <div class="pquad-item pain">
+                <strong>Pain Points</strong>
+                <p>Many running apps are too complex, too competitive, or difficult for older adults to use confidently.</p>
+              </div>
+              <div class="pquad-item motivation">
+                <strong>Motivation</strong>
+                <p>He wants a tool that helps him keep a safe and regular jogging habit for better health.</p>
+              </div>
+              <div class="pquad-item opportunity">
+                <strong>Design Opportunity</strong>
+                <p>Use readable layouts, clear guidance, and supportive health-oriented feedback to reduce barriers.</p>
+              </div>
+            </div>
+            <ul class="persona-scenarios">
+              <li><span class="scenario-check">✓</span><span><strong>Typical scenario:</strong> Mr. Li checks the app in the morning before going out for a light jog in the community.</span></li>
+              <li><span class="scenario-check">✓</span><span><strong>Frustration:</strong> Small text, too many steps, or unclear wording may make him stop using the app.</span></li>
+              <li><span class="scenario-check">✓</span><span><strong>Expectation:</strong> He expects a calm, simple, and reassuring experience that is easy to return to every day.</span></li>
+            </ul>
+          </article>
         </div>
-        <div>
-          <h3>Secondary Persona</h3>
-          <p style="margin-top: 8px;">
-            Mr. Li is a retired older adult who does light daily jogging to maintain his health and wants a simple, safe, and encouraging experience.
+
+        <div class="card reveal" style="margin-top: 24px;">
+          <div class="card-top">
+            <h3>GoRunners User Journey Map</h3>
+            <span class="chip">Pain-point focused</span>
+          </div>
+          <p class="small" style="margin-top: 8px; margin-bottom: 18px;">
+            This journey focuses on how a beginner runner discovers GoRunners, gets training support, joins a suitable run, participates in the activity, and decides whether to return.
           </p>
-          <div class="persona-meta">
-            <span class="tag">Age: 67</span>
-            <span class="tag">Role: Retired resident</span>
-            <span class="tag">Goal: Maintain a healthy routine</span>
+
+          <div class="journey">
+            <div class="journey-step">
+              <strong>Discover</strong>
+              <p class="small" style="margin-top:8px;"><strong>Goal:</strong> Understand what GoRunners offers and whether it is suitable for a beginner runner.</p>
+              <p class="small"><strong>Action:</strong> Visit the homepage, scan the navigation, and look for a clear starting point.</p>
+              <div class="pain">Pain point: the user may not know whether to start with finding a run, using the training assistant, or browsing the map.</div>
+              <p class="small" style="margin-top:8px;"><strong>Design response:</strong> Highlight clear entry paths such as Get Training Help and Find a Run.</p>
+            </div>
+            <div class="journey-step">
+              <strong>Plan</strong>
+              <p class="small" style="margin-top:8px;"><strong>Goal:</strong> Get a safe and practical weekly running plan based on current ability and personal goals.</p>
+              <p class="small"><strong>Action:</strong> Open the training assistant, enter running level, goal, and condition, then ask for guidance.</p>
+              <div class="pain">Pain point: beginners may struggle to describe their goals clearly and may worry that the advice is too difficult or unrealistic.</div>
+              <p class="small" style="margin-top:8px;"><strong>Design response:</strong> Use structured inputs and supportive prompts to generate beginner-friendly plans with clear pacing, warm-up, and recovery advice.</p>
+            </div>
+            <div class="journey-step">
+              <strong>Join</strong>
+              <p class="small" style="margin-top:8px;"><strong>Goal:</strong> Find a suitable running activity that matches fitness level, confidence, and motivation.</p>
+              <p class="small"><strong>Action:</strong> Explore runs, compare distance, pace, time, and route details, then decide whether to join an event.</p>
+              <div class="pain">Pain point: it can be difficult for beginners to judge which event is suitable, especially when they are unsure of their own pace or stamina.</div>
+              <p class="small" style="margin-top:8px;"><strong>Design response:</strong> Show clear labels for difficulty, pace range, distance, and beginner-friendly suitability.</p>
+            </div>
+            <div class="journey-step">
+              <strong>Participate</strong>
+              <p class="small" style="margin-top:8px;"><strong>Goal:</strong> Attend the activity smoothly and feel supported during the run.</p>
+              <p class="small"><strong>Action:</strong> Arrive at the meetup point, follow the route or map, and complete the running activity.</p>
+              <div class="pain">Pain point: the user may feel nervous or unsupported if route guidance, meetup details, or activity flow are unclear.</div>
+              <p class="small" style="margin-top:8px;"><strong>Design response:</strong> Provide simple route information, visible meetup details, and lightweight participation support such as map guidance or check-in feedback.</p>
+            </div>
+            <div class="journey-step">
+              <strong>Return</strong>
+              <p class="small" style="margin-top:8px;"><strong>Goal:</strong> Reflect on progress, stay motivated, and continue using GoRunners.</p>
+              <p class="small"><strong>Action:</strong> Review the run, ask follow-up questions, check progress, and decide whether to join another run.</p>
+              <div class="pain">Pain point: without encouragement, social feedback, or clear next steps, the user may lose motivation and not return.</div>
+              <p class="small" style="margin-top:8px;"><strong>Design response:</strong> Use post-run feedback, recovery suggestions, progress visibility, and community interaction to encourage continued engagement.</p>
+            </div>
           </div>
-          <ul class="list">
-            <li><span class="check">✓</span><span><strong>Needs:</strong> A simple interface, clear jogging guidance, easy progress tracking, and health-friendly support.</span></li>
-            <li><span class="check">✓</span><span><strong>Pain points:</strong> Many running apps are too complex, too competitive, or difficult for older adults to use confidently.</span></li>
-            <li><span class="check">✓</span><span><strong>Motivation:</strong> Wants a tool that helps him keep a safe and regular jogging habit for better health.</span></li>
-          </ul>
-        </div>
-      </article>
-    </div>
-
-        <div class="card glass reveal" style="margin-top: 20px;">
-      <div class="card-top">
-        <h3>GoRunners User Journey Map</h3>
-        <span class="chip">Pain-point focused</span>
-      </div>
-      <p class="small" style="margin-top: 8px; margin-bottom: 18px;">
-        This journey focuses on how a beginner runner discovers GoRunners, gets training support, joins a suitable run, participates in the activity, and decides whether to return.
-      </p>
-
-      <div class="journey">
-        <div class="journey-step">
-          <strong>Discover</strong>
-          <p class="small" style="margin-top:8px;"><strong>Goal:</strong> Understand what GoRunners offers and whether it is suitable for a beginner runner.</p>
-          <p class="small"><strong>Action:</strong> Visit the homepage, scan the navigation, and look for a clear starting point.</p>
-          <div class="pain">Pain point: the user may not know whether to start with finding a run, using the training assistant, or browsing the map.</div>
-          <p class="small" style="margin-top:8px;"><strong>Design response:</strong> Highlight clear entry paths such as Get Training Help and Find a Run.</p>
         </div>
 
-        <div class="journey-step">
-          <strong>Plan</strong>
-          <p class="small" style="margin-top:8px;"><strong>Goal:</strong> Get a safe and practical weekly running plan based on current ability and personal goals.</p>
-          <p class="small"><strong>Action:</strong> Open the training assistant, enter running level, goal, and condition, then ask for guidance.</p>
-          <div class="pain">Pain point: beginners may struggle to describe their goals clearly and may worry that the advice is too difficult or unrealistic.</div>
-          <p class="small" style="margin-top:8px;"><strong>Design response:</strong> Use structured inputs and supportive prompts to generate beginner-friendly plans with clear pacing, warm-up, and recovery advice.</p>
-        </div>
-
-        <div class="journey-step">
-          <strong>Join</strong>
-          <p class="small" style="margin-top:8px;"><strong>Goal:</strong> Find a suitable running activity that matches fitness level, confidence, and motivation.</p>
-          <p class="small"><strong>Action:</strong> Explore runs, compare distance, pace, time, and route details, then decide whether to join an event.</p>
-          <div class="pain">Pain point: it can be difficult for beginners to judge which event is suitable, especially when they are unsure of their own pace or stamina.</div>
-          <p class="small" style="margin-top:8px;"><strong>Design response:</strong> Show clear labels for difficulty, pace range, distance, and beginner-friendly suitability.</p>
-        </div>
-
-        <div class="journey-step">
-          <strong>Participate</strong>
-          <p class="small" style="margin-top:8px;"><strong>Goal:</strong> Attend the activity smoothly and feel supported during the run.</p>
-          <p class="small"><strong>Action:</strong> Arrive at the meetup point, follow the route or map, and complete the running activity.</p>
-          <div class="pain">Pain point: the user may feel nervous or unsupported if route guidance, meetup details, or activity flow are unclear.</div>
-          <p class="small" style="margin-top:8px;"><strong>Design response:</strong> Provide simple route information, visible meetup details, and lightweight participation support such as map guidance or check-in feedback.</p>
-        </div>
-
-        <div class="journey-step">
-          <strong>Return</strong>
-          <p class="small" style="margin-top:8px;"><strong>Goal:</strong> Reflect on progress, stay motivated, and continue using GoRunners.</p>
-          <p class="small"><strong>Action:</strong> Review the run, ask follow-up questions, check progress, and decide whether to join another run.</p>
-          <div class="pain">Pain point: without encouragement, social feedback, or clear next steps, the user may lose motivation and not return.</div>
-          <p class="small" style="margin-top:8px;"><strong>Design response:</strong> Use post-run feedback, recovery suggestions, progress visibility, and community interaction to encourage continued engagement.</p>
+        <div class="g3" style="margin-top: 24px;">
+          <article class="card reveal">
+            <div class="chip">Must-have 01</div>
+            <h3 style="margin-top: 14px;">Clear starting guidance</h3>
+            <p style="margin-top: 8px;">The system should help new runners quickly understand where to begin, whether that is getting a training plan, finding a suitable run, or exploring the platform.</p>
+          </article>
+          <article class="card reveal">
+            <div class="chip">Must-have 02</div>
+            <h3 style="margin-top: 14px;">Beginner-friendly support</h3>
+            <p style="margin-top: 8px;">The system should provide realistic training suggestions, appropriate activity information, and supportive wording so beginner runners feel safe and confident.</p>
+          </article>
+          <article class="card reveal">
+            <div class="chip">Must-have 03</div>
+            <h3 style="margin-top: 14px;">Motivation and continuity</h3>
+            <p style="margin-top: 8px;">The system should encourage users to return through progress feedback, recovery support, and clear next-step recommendations after each interaction or run.</p>
+          </article>
         </div>
       </div>
-    </div>
-
-    <div class="grid-3" style="margin-top: 20px;">
-      <article class="card glass reveal">
-        <div class="chip">Must-have 01</div>
-        <h3 style="margin-top: 14px;">Clear starting guidance</h3>
-        <p style="margin-top: 8px;">
-          The system should help new runners quickly understand where to begin, whether that is getting a training plan, finding a suitable run, or exploring the platform.
-        </p>
-      </article>
-      <article class="card glass reveal">
-        <div class="chip">Must-have 02</div>
-        <h3 style="margin-top: 14px;">Beginner-friendly support</h3>
-        <p style="margin-top: 8px;">
-          The system should provide realistic training suggestions, appropriate activity information, and supportive wording so beginner runners feel safe and confident.
-        </p>
-      </article>
-      <article class="card glass reveal">
-        <div class="chip">Must-have 03</div>
-        <h3 style="margin-top: 14px;">Motivation and continuity</h3>
-        <p style="margin-top: 8px;">
-          The system should encourage users to return through progress feedback, recovery support, and clear next-step recommendations after each interaction or run.
-        </p>
-      </article>
-    </div>
-  </div>
-</section>
+    </section>
 
     <section id="ideation">
       <div class="container">
         <div class="section-head reveal">
-          <div>
-            <div class="eyebrow">03 · Ideation & Alternatives</div>
-            <h2>Document the thinking, not just the final answer.</h2>
-          </div>
+          <div class="eyebrow">03 · Ideation & Alternatives</div>
+          <h2>Document the thinking, not just the final answer.</h2>
           <p>
             Show evidence of divergence and convergence: sketches, multiple solution paths, and why you selected one direction over the others.
           </p>
         </div>
 
-        <div class="card glass reveal">
+        <div class="card reveal">
           <div class="card-top">
             <h3>Crazy Eights sketch gallery</h3>
             <span class="chip">Replace with your photos</span>
@@ -1183,8 +371,8 @@
           </div>
         </div>
 
-        <div class="grid-3" style="margin-top: 20px;">
-          <article class="card glass reveal">
+        <div class="g3" style="margin-top: 24px;">
+          <article class="card reveal">
             <div class="chip">Alternative A</div>
             <h3 style="margin-top: 14px;">Exploration-first</h3>
             <p style="margin-top: 8px;">Best for discovery and narrative. Good emotional framing, but may increase cognitive load for first-time users.</p>
@@ -1194,7 +382,7 @@
               <li><span class="check">✓</span><span>Weak task efficiency</span></li>
             </ul>
           </article>
-          <article class="card glass reveal">
+          <article class="card reveal">
             <div class="chip">Alternative B</div>
             <h3 style="margin-top: 14px;">Task-first dashboard</h3>
             <p style="margin-top: 8px;">Efficient and clear, but may feel too functional. Needs stronger playful interactions and social energy.</p>
@@ -1204,7 +392,7 @@
               <li><span class="check">✓</span><span>Lower emotional engagement</span></li>
             </ul>
           </article>
-          <article class="card glass reveal">
+          <article class="card reveal">
             <div class="chip">Selected direction</div>
             <h3 style="margin-top: 14px;">Balanced playful workflow</h3>
             <p style="margin-top: 8px;">Combines the strongest parts of both directions: clear tasks, fast onboarding, and a playful reward loop.</p>
@@ -1221,17 +409,15 @@
     <section id="prototype">
       <div class="container">
         <div class="section-head reveal">
-          <div>
-            <div class="eyebrow">04 · Prototype & Technical Implementation</div>
-            <h2>Present the system like a real product, not just screenshots.</h2>
-          </div>
+          <div class="eyebrow">04 · Prototype & Technical Implementation</div>
+          <h2>Present the system like a real product, not just screenshots.</h2>
           <p>
             This section is where your portfolio starts feeling substantial: a Figma link, system architecture, high-fidelity interface, live URL, and individual contributions.
           </p>
         </div>
 
-        <div class="grid-2">
-          <article class="card glass reveal">
+        <div class="g2">
+          <article class="card reveal">
             <div class="card-top">
               <h3>High-fidelity mobile view</h3>
               <span class="chip">Replace with real screenshots</span>
@@ -1241,8 +427,8 @@
                 <div class="phone-screen">
                   <div>
                     <div class="chip">Prototype</div>
-                    <h3 style="margin-top: 10px; color: #111827;">Main screen title</h3>
-                    <p class="small" style="margin-top: 8px; color: #64748b;">Use this area for your project name and value proposition.</p>
+                    <h3 style="margin-top: 10px; color: #fff;">Main screen title</h3>
+                    <p class="small" style="margin-top: 8px; color: rgba(255,255,255,0.6);">Use this area for your project name and value proposition.</p>
                   </div>
                   <div class="feature-grid">
                     <div class="feature-block"><strong>Feature 1</strong><p class="small" style="margin-top:8px;">Playful interaction</p></div>
@@ -1251,7 +437,7 @@
                     <div class="feature-block"><strong>Feature 4</strong><p class="small" style="margin-top:8px;">Rewards or reflection</p></div>
                   </div>
                   <div class="feature-block" style="min-height: 180px;">
-                    <strong>Replace with screenshot or embedded image</strong>
+                    <strong>Replace with screenshot</strong>
                     <p class="small" style="margin-top: 8px;">You can also turn this block into an actual image tag linked to your prototype screenshots.</p>
                   </div>
                 </div>
@@ -1259,7 +445,7 @@
             </div>
           </article>
 
-          <article class="card glass reveal">
+          <article class="card reveal">
             <div class="card-top">
               <h3>System architecture</h3>
               <span class="chip">Data flow</span>
@@ -1282,20 +468,20 @@
                 <p class="small" style="margin-top:8px;">Visible progress, engagement, reflection.</p>
               </div>
             </div>
-            <div class="grid-2" style="margin-top: 18px;">
+            <div class="g2" style="margin-top: 18px; background: transparent; border: none; gap: 16px;">
               <div class="note ai">
                 <strong>Figma prototype</strong>
                 <p class="small">Add a real Figma link here: <span class="muted">https://figma.com/...</span></p>
               </div>
               <div class="note kpi">
                 <strong>Live system URL</strong>
-                <p class="small">Add your deployed system link here: <span class="muted">https://yourproject.github.io</span></p>
+                <p class="small">Add your deployed link here: <span class="muted">https://yourproject.github.io</span></p>
               </div>
             </div>
           </article>
         </div>
 
-        <article class="card glass reveal" style="margin-top: 20px;">
+        <article class="card reveal" style="margin-top: 24px;">
           <div class="card-top">
             <h3>Individual contributions</h3>
             <span class="chip">4 members</span>
@@ -1311,30 +497,10 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Junhong Liao</td>
-                  <td>Example: Front-end / Research</td>
-                  <td>UI implementation, code structure, literature review, testing.</td>
-                  <td>Git commits, screenshots, meeting notes, prototype pages.</td>
-                </tr>
-                <tr>
-                  <td>Yufeng Du</td>
-                  <td>Example: System logic / Data</td>
-                  <td>Interactive features, architecture, content organization, debugging.</td>
-                  <td>Component files, flow diagrams, evaluation records.</td>
-                </tr>
-                <tr>
-                  <td>Xiaohan Qiu</td>
-                  <td>Example: Research / Evaluation</td>
-                  <td>Paper review, personas, usability study, insight synthesis.</td>
-                  <td>Interview notes, testing summary, reflection drafts.</td>
-                </tr>
-                <tr>
-                  <td>Sunxi Peng</td>
-                  <td>Example: Content / Presentation</td>
-                  <td>Portfolio writing, visual assets, prototype polishing, slides or video support.</td>
-                  <td>Portfolio sections, media assets, design revisions.</td>
-                </tr>
+                <tr><td>Junhong Liao</td><td>Example: Front-end / Research</td><td>UI implementation, code structure, literature review, testing.</td><td>Git commits, screenshots, meeting notes, prototype pages.</td></tr>
+                <tr><td>Yufeng Du</td><td>Example: System logic / Data</td><td>Interactive features, architecture, content organization, debugging.</td><td>Component files, flow diagrams, evaluation records.</td></tr>
+                <tr><td>Xiaohan Qiu</td><td>Example: Research / Evaluation</td><td>Paper review, personas, usability study, insight synthesis.</td><td>Interview notes, testing summary, reflection drafts.</td></tr>
+                <tr><td>Sunxi Peng</td><td>Example: Content / Presentation</td><td>Portfolio writing, visual assets, prototype polishing, slides or video support.</td><td>Portfolio sections, media assets, design revisions.</td></tr>
               </tbody>
             </table>
           </div>
@@ -1345,17 +511,15 @@
     <section id="evaluation">
       <div class="container">
         <div class="section-head reveal">
-          <div>
-            <div class="eyebrow">05 · Evaluation & Iteration</div>
-            <h2>Prove that your design changed because of user feedback.</h2>
-          </div>
+          <div class="eyebrow">05 · Evaluation & Iteration</div>
+          <h2>Prove that your design changed because of user feedback.</h2>
           <p>
             Your evaluation section should not be vague. Show who you tested with, what they struggled with, what quotes you captured, and exactly what you changed afterward.
           </p>
         </div>
 
-        <div class="grid-3">
-          <article class="card glass reveal">
+        <div class="g3">
+          <article class="card reveal">
             <div class="chip">Tester 01</div>
             <h3 style="margin-top: 14px;">Usability insight</h3>
             <p style="margin-top: 8px;">“I like the concept, but I was not sure what to do first.”</p>
@@ -1364,7 +528,7 @@
               <li><span class="check">✓</span><span>Action: simplified first screen</span></li>
             </ul>
           </article>
-          <article class="card glass reveal">
+          <article class="card reveal">
             <div class="chip">Tester 02</div>
             <h3 style="margin-top: 14px;">Usability insight</h3>
             <p style="margin-top: 8px;">“The rewards are interesting, but I want more feedback during the process.”</p>
@@ -1373,7 +537,7 @@
               <li><span class="check">✓</span><span>Action: added progress cues</span></li>
             </ul>
           </article>
-          <article class="card glass reveal">
+          <article class="card reveal">
             <div class="chip">Tester 03</div>
             <h3 style="margin-top: 14px;">Usability insight</h3>
             <p style="margin-top: 8px;">“The social feature is useful, but I need more confidence to share.”</p>
@@ -1384,34 +548,34 @@
           </article>
         </div>
 
-        <div class="before-after" style="margin-top: 20px;">
-          <article class="ba-panel glass reveal">
-            <div class="chip" style="background: rgba(239,68,68,0.12); color: #b91c1c;">Before</div>
+        <div class="before-after" style="margin-top: 24px;">
+          <article class="ba-panel reveal">
+            <div class="chip" style="background: rgba(239,68,68,0.1); color: #fca5a5;">Before</div>
             <h3 style="margin-top: 14px;">Original design</h3>
             <p style="margin-top: 8px;">Replace this with a real description of the earlier prototype and its usability problem.</p>
             <div class="wire">
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="box a"></div>
-              <div class="box b"></div>
-              <div class="box c"></div>
+              <div class="bar" style="width: 20%; background: rgba(239,68,68,0.2);"></div>
+              <div class="bar" style="width: 70%; background: rgba(239,68,68,0.1);"></div>
+              <div class="box a" style="background: rgba(239,68,68,0.08);"></div>
+              <div class="box b" style="background: rgba(239,68,68,0.08);"></div>
+              <div class="box c" style="background: rgba(239,68,68,0.1);"></div>
             </div>
           </article>
-          <article class="ba-panel glass reveal">
-            <div class="chip" style="background: rgba(22,163,74,0.12); color: #15803d;">After</div>
+          <article class="ba-panel reveal">
+            <div class="chip" style="background: rgba(34,197,94,0.1); color: #86efac;">After</div>
             <h3 style="margin-top: 14px;">Refined design</h3>
             <p style="margin-top: 8px;">Replace this with the improved version and explain why it better supports your users’ needs.</p>
-            <div class="wire" style="background: linear-gradient(180deg, rgba(236,253,245,0.8), rgba(255,255,255,0.98));">
-              <div class="bar" style="width: 26%; background: rgba(22,163,74,0.18);"></div>
-              <div class="bar" style="width: 84%; background: rgba(22,163,74,0.12);"></div>
-              <div class="box a" style="background: rgba(22,163,74,0.08);"></div>
-              <div class="box b" style="background: rgba(22,163,74,0.08);"></div>
-              <div class="box c" style="background: rgba(22,163,74,0.1);"></div>
+            <div class="wire">
+              <div class="bar" style="width: 26%; background: rgba(34,197,94,0.2);"></div>
+              <div class="bar" style="width: 84%; background: rgba(34,197,94,0.1);"></div>
+              <div class="box a" style="background: rgba(34,197,94,0.08);"></div>
+              <div class="box b" style="background: rgba(34,197,94,0.08);"></div>
+              <div class="box c" style="background: rgba(34,197,94,0.1);"></div>
             </div>
           </article>
         </div>
 
-        <div class="grid-2" style="margin-top: 20px;">
+        <div class="g2" style="margin-top: 24px;">
           <article class="quote reveal">
             <strong>Social and ethical reflection</strong>
             <p style="margin-top: 10px;">
@@ -1431,69 +595,47 @@
     <section id="team">
       <div class="container">
         <div class="section-head reveal">
-          <div>
-            <div class="eyebrow">06 · Team</div>
-            <h2> group professionally.</h2>
-          </div>
-          <p>
-
-          </p>
+          <div class="eyebrow">06 · Team</div>
+          <h2>Our team.</h2>
+          <p>Meet the people behind GoRunners.</p>
         </div>
 
-        <div class="grid-4">
-
-          <article class="card glass team-card reveal">
-            <div class="team-photo">
-              <img src="img/liao.JPG" alt="Junhong Liao" style="width:100%; height:100%; object-fit:cover; border-radius:22px;">
-            </div>
-            <div>
+        <div class="team-grid">
+          <article class="team-card reveal">
+            <div class="team-avatar"><img src="img/liao.JPG" alt="Junhong Liao"></div>
+            <div class="team-info">
               <h3>Junhong Liao</h3>
-              <div class="role">Student ID: 2363229</div>
-              <p style="margin-top: 10px;">
-                XJTLU CS student & published researcher. Skilled in Python/MATLAB with MCM Honorable Mention. Experienced team leader passionate about AI and problem-solving.
-              </p>
+              <span class="team-role">Student ID: 2363229</span>
+              <p>XJTLU CS student &amp; published researcher. Skilled in Python/MATLAB with MCM Honorable Mention. Experienced team leader passionate about AI and problem-solving.</p>
             </div>
           </article>
 
-          <article class="card glass team-card reveal">
-            <div class="team-photo">
-              <img src="img/du.png" alt="Yufeng Du" style="width:100%; height:100%; object-fit:cover; border-radius:22px;">
-            </div>
-            <div>
+          <article class="team-card reveal">
+            <div class="team-avatar"><img src="img/du.png" alt="Yufeng Du"></div>
+            <div class="team-info">
               <h3>Yufeng Du</h3>
-              <div class="role">Student ID: 2362479</div>
-              <p style="margin-top: 10px;">
-                XJTLU ICS student with 3.7 GPA, served as a surf member. Proficient in Python/Java, interested in AI model exploration. Hobbies include music, Go, and badminton.
-              </p>
+              <span class="team-role">Student ID: 2362479</span>
+              <p>XJTLU ICS student with 3.7 GPA, served as a surf member. Proficient in Python/Java, interested in AI model exploration. Hobbies include music, Go, and badminton.</p>
             </div>
           </article>
 
-          <article class="card glass team-card reveal">
-            <div class="team-photo">
-              <img src="img/qiu.png" alt="Xiaohan Qiu" style="width:100%; height:100%; object-fit:cover; border-radius:22px;">
-            </div>
-            <div>
+          <article class="team-card reveal">
+            <div class="team-avatar"><img src="img/qiu.png" alt="Xiaohan Qiu"></div>
+            <div class="team-info">
               <h3>Xiaohan Qiu</h3>
-              <div class="role">Student ID: 2360886</div>
-              <p style="margin-top: 10px;">
-                XJTLU ICS student, two-time SURF researcher (CAD/FEA & AI imaging), MCM Honorable Mention. Skilled in Python/SQL, experienced in teamwork and leadership.
-              </p>
+              <span class="team-role">Student ID: 2360886</span>
+              <p>XJTLU ICS student, two-time SURF researcher (CAD/FEA &amp; AI imaging), MCM Honorable Mention. Skilled in Python/SQL, experienced in teamwork and leadership.</p>
             </div>
           </article>
 
-          <article class="card glass team-card reveal">
-            <div class="team-photo">
-              <img src="img/peng.png" alt="Sunxi Peng" style="width:100%; height:100%; object-fit:cover; border-radius:22px;">
-            </div>
-            <div>
+          <article class="team-card reveal">
+            <div class="team-avatar"><img src="img/peng.png" alt="Sunxi Peng"></div>
+            <div class="team-info">
               <h3>Sunxi Peng</h3>
-              <div class="role">Student ID: 2361598</div>
-              <p style="margin-top: 10px;">
-                XJTLU ICS student (GPA 3.7), experienced calculus teaching assistant. Skilled in Python/Java, passionate about AI and model training. Enjoys music, Go, and reading.
-              </p>
+              <span class="team-role">Student ID: 2361598</span>
+              <p>XJTLU ICS student (GPA 3.7), experienced calculus teaching assistant. Skilled in Python/Java, passionate about AI and model training. Enjoys music, Go, and reading.</p>
             </div>
           </article>
-
         </div>
       </div>
     </section>
@@ -1501,34 +643,32 @@
     <section id="reflection">
       <div class="container">
         <div class="section-head reveal">
-          <div>
-            <div class="eyebrow">07 · Technical Reflection</div>
-            <h2>Explain how AI was used, verified, and constrained.</h2>
-          </div>
+          <div class="eyebrow">07 · Technical Reflection</div>
+          <h2>Explain how AI was used, verified, and constrained.</h2>
           <p>
             This is one of the most important coursework-specific sections. Be explicit about what the model helped with, how you checked the output, and what ethical concerns you considered.
           </p>
         </div>
 
-        <div class="grid-3">
-          <article class="card glass reveal">
+        <div class="g3">
+          <article class="card reveal">
             <div class="chip">Prompt log</div>
             <h3 style="margin-top: 14px;">What prompts were used</h3>
             <p style="margin-top: 8px;">List the main prompts used for code scaffolding, CSS refinement, interface ideas, or debugging. Keep them concrete.</p>
           </article>
-          <article class="card glass reveal">
+          <article class="card reveal">
             <div class="chip">Verification</div>
             <h3 style="margin-top: 14px;">How the code was checked</h3>
             <p style="margin-top: 8px;">Explain how your group validated behavior, tested responsiveness, confirmed requirements, and fixed incorrect AI outputs.</p>
           </article>
-          <article class="card glass reveal">
+          <article class="card reveal">
             <div class="chip">Ethics</div>
             <h3 style="margin-top: 14px;">Accessibility and bias considerations</h3>
             <p style="margin-top: 8px;">Discuss readability, keyboard access, visual contrast, and any risk of excluding certain users or automating weak assumptions.</p>
           </article>
         </div>
 
-        <div class="card glass reveal" style="margin-top: 20px;">
+        <div class="card reveal" style="margin-top: 24px;">
           <div class="card-top">
             <h3>References & acknowledgments</h3>
             <span class="chip">Replace with your real list</span>
@@ -1545,9 +685,9 @@
     </section>
   </main>
 
-  <footer class="footer">
+  <footer>
     <div class="container">
-      <div class="footer-card glass">
+      <div class="footer-card">
         <div>
           <h3>Ready for GitHub Pages</h3>
           <p style="margin-top: 8px;">This single-file template is designed to be easy to upload and customize. Replace the placeholders with your own text, screenshots, photos, links, and evidence.</p>
@@ -1558,20 +698,25 @@
   </footer>
 
   <script>
+    /* ===== Reveal on scroll ===== */
     const revealItems = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealItems.forEach(item => io.observe(item));
+
+    /* ===== Navigation ===== */
     const links = document.querySelectorAll('.nav-links a');
     const sections = [...document.querySelectorAll('main section')];
 
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.15 });
-
-    revealItems.forEach(item => io.observe(item));
-
+    // Highlight active link based on scroll
     const setActiveLink = () => {
-      const scrollPos = window.scrollY + 140;
+      const scrollPos = window.scrollY + 160;
       let current = sections[0]?.id || '';
       sections.forEach(section => {
         if (section.offsetTop <= scrollPos) current = section.id;
@@ -1580,9 +725,164 @@
         link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
       });
     };
-
     window.addEventListener('scroll', setActiveLink);
     setActiveLink();
+
+    // Smooth scroll for nav clicks
+    links.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const target = document.getElementById(targetId);
+        if (!target) return;
+        const navHeight = document.querySelector('.nav-wrap').offsetHeight;
+        const targetPos = target.getBoundingClientRect().top + window.scrollY - navHeight - 20;
+        window.scrollTo({ top: targetPos, behavior: 'smooth' });
+        history.pushState(null, null, `#${targetId}`);
+      });
+    });
+
+    // Back to top behavior
+    const backToTop = document.querySelector('footer .btn');
+    if (backToTop) {
+      backToTop.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+    /* ===== Algorithmic Donut 3D Engine ===== */
+    const canvas = document.getElementById('donutCanvas');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    
+    function resize() {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    // Fade out donut on scroll
+    window.addEventListener('scroll', () => {
+      const scrollPercent = Math.min(window.scrollY / (window.innerHeight * 0.8), 1);
+      canvas.style.opacity = 1 - scrollPercent;
+    });
+
+    const particles = [];
+    const NUM_PARTICLES = 2500;
+    const R = 220; // Major radius
+    const r = 80;  // Minor radius
+    
+    // Initialize Torus Particles
+    for (let i = 0; i < NUM_PARTICLES; i++) {
+      const u = Math.random() * Math.PI * 2;
+      const v = Math.random() * Math.PI * 2;
+      
+      // Calculate 3D base position
+      const bx = (R + r * Math.cos(v)) * Math.cos(u);
+      const by = (R + r * Math.cos(v)) * Math.sin(u);
+      const bz = r * Math.sin(v);
+      
+      particles.push({
+        baseX: bx, baseY: by, baseZ: bz,
+        lx: 0, ly: 0, // logical 2D position
+        vx: 0, vy: 0, // velocity
+        // Create an accent distribution (neon orange vs tech blue/white)
+        isAccent: Math.random() > 0.85
+      });
+    }
+
+    let mouse = { x: -9999, y: -9999 };
+    window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+    window.addEventListener('touchmove', e => { mouse.x = e.touches[0].clientX; mouse.y = e.touches[0].clientY; });
+    window.addEventListener('mouseout', () => { mouse.x = -9999; mouse.y = -9999; });
+
+    let time = 0;
+    function animate() {
+      time += 0.005;
+      
+      // Clear with slight trailing effect for motion blur
+      ctx.fillStyle = 'rgba(6, 6, 8, 0.2)';
+      ctx.fillRect(0, 0, width, height);
+      
+      const cx = width / 2;
+      const cy = height / 2;
+      
+      // Rotation matrices based on time
+      const cosX = Math.cos(time * 0.8); const sinX = Math.sin(time * 0.8);
+      const cosY = Math.cos(time * 1.2); const sinY = Math.sin(time * 1.2);
+      const cosZ = Math.cos(time * 0.3); const sinZ = Math.sin(time * 0.3);
+
+      for (let p of particles) {
+        // 1. Rotate base 3D coordinates
+        // Rotate X
+        let y1 = p.baseY * cosX - p.baseZ * sinX;
+        let z1 = p.baseY * sinX + p.baseZ * cosX;
+        // Rotate Y
+        let x2 = p.baseX * cosY + z1 * sinY;
+        let z2 = -p.baseX * sinY + z1 * cosY;
+        // Rotate Z
+        let targetX = x2 * cosZ - y1 * sinZ;
+        let targetY = x2 * sinZ + y1 * cosZ;
+        
+        // 2. Add fake perspective scalar
+        const perspective = 800 / (800 - z2);
+        targetX = cx + targetX * perspective;
+        targetY = cy + targetY * perspective;
+        
+        // Initialize logical position on first frame to prevent flying in
+        if (p.lx === 0 && p.ly === 0) { p.lx = targetX; p.ly = targetY; }
+
+        // 3. Mouse Interaction (Repel/Destruction)
+        const dx = p.lx - mouse.x;
+        const dy = p.ly - mouse.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        
+        if (dist < 180) {
+          const force = (180 - dist) / 180;
+          p.vx += (dx / dist) * force * 12; // Explosive push
+          p.vy += (dy / dist) * force * 12;
+        }
+
+        // 4. Spring Physics (Elastic return to target)
+        const springDx = targetX - p.lx;
+        const springDy = targetY - p.ly;
+        
+        p.vx += springDx * 0.05; // Spring stiffness
+        p.vy += springDy * 0.05;
+        
+        // Friction / Damping
+        p.vx *= 0.85; 
+        p.vy *= 0.85;
+        
+        // Update logical position
+        p.lx += p.vx;
+        p.ly += p.vy;
+
+        // 5. Render
+        const size = Math.max(0.5, 2.5 * perspective);
+        // Dim particles that are further back, brighten front particles
+        const alpha = Math.min(1, Math.max(0.1, (z2 + r + R) / (2 * (r + R))));
+        
+        if (p.isAccent) {
+          // Neon Orange for sports accent
+          ctx.fillStyle = `rgba(249, 115, 22, ${alpha * 1.5})`; 
+        } else {
+          // Sci-fi tech blue/white
+          ctx.fillStyle = `rgba(180, 200, 255, ${alpha * 0.8})`;
+        }
+
+        ctx.beginPath();
+        ctx.arc(p.lx, p.ly, size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      
+      requestAnimationFrame(animate);
+    }
+    
+    animate();
   </script>
 </body>
 </html>
