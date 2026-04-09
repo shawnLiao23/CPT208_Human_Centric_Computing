@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CPT208 Process Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="donutCanvas"></canvas>
+  <div class="cinematic-bg" aria-hidden="true"></div>
+
+  <div class="nav-wrap">
+    <div class="container">
+      <nav class="nav">
+        <div class="brand">
+          <div>
+            <div>CPT208 Process Portfolio</div>
+            <div class="sub">Human-Centric Computing · Week 10 Submission</div>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="#overview">Overview</a>
+          <a href="#motivation">Motivation</a>
+          <a href="#requirements">Requirements</a>
+          <a href="#ideation">Ideation</a>
+          <a href="#prototype">Prototype</a>
+          <a href="#evaluation">Evaluation</a>
+          <a href="#team">Team</a>
+          <a href="#reflection">Reflection</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero" id="overview">
+      <div class="container">
+        <div class="hero-content reveal">
+          <div class="eyebrow">Designing Playful Experiences · Group B2-1</div>
+          <h1>Welcome to our Process Portfolio</h1>
+          <p class="hero-sub">
+            This template is designed for the CPT208 process portfolio: a hosted GitHub page that documents your motivation, research, personas, user journey, alternatives, prototype, evaluation, team contributions, and technical reflection in one polished experience.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#motivation"><span>Explore the portfolio</span></a>
+            <a class="btn btn-secondary" href="#prototype"><span>View prototype section</span></a>
+          </div>
+          
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>4</strong>
+              <span>Team members</span>
+            </div>
+            <div class="stat">
+              <strong>5+</strong>
+              <span>Academic papers</span>
+            </div>
+            <div class="stat">
+              <strong>3</strong>
+              <span>Core playful features</span>
+            </div>
+            <div class="stat">
+              <strong>W10</strong>
+              <span>Final deadline</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="motivation">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">01 · Motivation & Research</div>
+          <h2>Frame the problem before you design the solution.</h2>
+          <p>
+            Your portfolio should show why this topic matters, what prior research and commercial products already do well, and where the opportunity for a more playful human-centered experience appears.
+          </p>
+        </div>
+
+        <div class="g2">
+          <article class="card reveal">
+            <div class="card-top">
+              <h3>Why this project matters</h3>
+              <span class="chip">200-word block</span>
+            </div>
+            <p>
+              Replace this paragraph with your own motivation. Explain why your group selected this design track, what challenge you observed in the real world, and what kind of playful impact you hope to create for your target stakeholders.
+            </p>
+            <ul class="list">
+              <li><span class="check">✓</span><span>State the context clearly: campus, heritage, running, climbing, student development, or open topic.</span></li>
+              <li><span class="check">✓</span><span>Describe a real pain point, not just a broad idea.</span></li>
+              <li><span class="check">✓</span><span>Show why a human-centered playful approach is more suitable than a purely functional tool.</span></li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-top">
+              <h3>Project roadmap</h3>
+              <span class="chip">Weeks 1–10</span>
+            </div>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="phase"><strong>Weeks 1–3</strong><span class="muted">Initial brainstorming, group roles, topic lock, portfolio setup.</span></div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="phase"><strong>Weeks 4–6</strong><span class="muted">User research, personas, user journey, research gap, early sketches.</span></div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="phase"><strong>Weeks 7–8</strong><span class="muted">Poster draft, higher-fidelity prototype, pilot testing, design alternatives.</span></div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="phase"><strong>Weeks 9–10</strong><span class="muted">Usability refinements, final portfolio, live URL, video demo, technical reflection.</span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="g2" style="margin-top: 24px;">
+          <article class="card reveal">
+            <div class="card-top">
+              <h3>Research gap: academic papers</h3>
+              <span class="chip">4 papers</span>
+            </div>
+            <div class="comparison-table">
+              <table>
+                <thead>
+                  <tr><th>Paper</th><th>What it did well</th><th>What it missed</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Paper 01</td><td>Strong interface concept, clear engagement mechanism, useful evaluation method.</td><td>Limited inclusivity, weak long-term motivation, unclear deployment context.</td></tr>
+                  <tr><td>Paper 02</td><td>Good social interaction design, thoughtful feedback loop, relevant target group.</td><td>No playful progression system, little personalization, weak mobile experience.</td></tr>
+                  <tr><td>Paper 03</td><td>Interesting narrative framing, robust literature foundation, clear persona alignment.</td><td>Small sample size, limited evidence of iteration, no real-world deployment.</td></tr>
+                  <tr><td>Paper 04</td><td>Useful persuasive mechanics, easy onboarding, good visual hierarchy.</td><td>Lack of accessibility detail, low novelty, shallow reflection on ethics.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-top">
+              <h3>Commercial product review</h3>
+              <span class="chip">4 products</span>
+            </div>
+            <div class="comparison-table">
+              <table>
+                <thead>
+                  <tr><th>Product</th><th>Strengths</th><th>Missed opportunities</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Product A</td><td>Easy navigation, strong community features, polished interaction design.</td><td>Weak emotional design, not contextualized for your domain.</td></tr>
+                  <tr><td>Product B</td><td>Good rewards system, habit loop, satisfying visual feedback.</td><td>Does not address your user group’s pain points directly.</td></tr>
+                  <tr><td>Product C</td><td>Useful content presentation, strong discoverability, recognizable patterns.</td><td>Low playfulness and no collaborative experience.</td></tr>
+                  <tr><td>Product D</td><td>Good notifications, effective gamification, scalable architecture.</td><td>Accessibility issues and limited ethical transparency.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="requirements">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">02 · User Requirements</div>
+          <h2>Show who we design for, how they experience GoRunners, and what they actually need.</h2>
+          <p>
+            This section connects our stakeholder analysis, personas, user journey pain points, and three must-have requirements for a beginner-friendly running experience.
+          </p>
+        </div>
+
+        <div class="persona-grid">
+          <!-- PRIMARY PERSONA -->
+          <article class="persona-card reveal">
+            <div class="persona-card-header">
+              <div class="persona-avatar"><img src="img/persona1.png" alt="Primary persona photo"></div>
+              <div class="persona-header-text">
+                <span class="persona-label primary-label">Primary Persona</span>
+                <h3 class="persona-name">Emily</h3>
+                <p class="persona-subtitle">University student · Beginner runner · Looking for a sustainable and enjoyable running habit</p>
+              </div>
+            </div>
+            <div class="persona-quote">
+              <p>"I want running to become part of my weekly routine, but I need it to feel motivating and manageable rather than tiring or stressful."</p>
+            </div>
+            <div class="persona-tags">
+              <span class="ptag">Age: 20</span>
+              <span class="ptag">Role: XJTLU student</span>
+              <span class="ptag">Goal: Build a running habit</span>
+              <span class="ptag">Level: Beginner</span>
+            </div>
+            <div class="persona-bg-section">
+              <h4>Background</h4>
+              <p>Emily is a university student who wants to build a regular running habit for fitness, stress relief, and personal achievement. She has interest in improving her health, but her class schedule is busy and her motivation can be unstable. She prefers tools that are easy to start with and that offer clear, positive guidance instead of competitive pressure.</p>
+            </div>
+            <div class="persona-quad">
+              <div class="pquad-item needs">
+                <strong>Needs</strong>
+                <p>Fast onboarding, simple run tracking, visible progress, and motivating feedback that feels achievable.</p>
+              </div>
+              <div class="pquad-item pain">
+                <strong>Pain Points</strong>
+                <p>Existing running apps can feel boring, overwhelming, or too competitive for beginners.</p>
+              </div>
+              <div class="pquad-item motivation">
+                <strong>Motivation</strong>
+                <p>She wants running to feel enjoyable, rewarding, and easy to continue every week.</p>
+              </div>
+              <div class="pquad-item opportunity">
+                <strong>Design Opportunity</strong>
+                <p>Provide a welcoming entry point, beginner-friendly recommendations, and playful progress feedback.</p>
+              </div>
+            </div>
+            <ul class="persona-scenarios">
+              <li><span class="scenario-check">✓</span><span><strong>Typical scenario:</strong> Emily opens GoRunners after class to look for a beginner-friendly activity or a short training suggestion.</span></li>
+              <li><span class="scenario-check">✓</span><span><strong>Frustration:</strong> If the system looks too advanced or too complicated, she may lose confidence and leave quickly.</span></li>
+              <li><span class="scenario-check">✓</span><span><strong>Expectation:</strong> She wants clear next steps, achievable goals, and a sense of progress after each run.</span></li>
+            </ul>
+          </article>
+
+          <!-- SECONDARY PERSONA -->
+          <article class="persona-card reveal">
+            <div class="persona-card-header">
+              <div class="persona-avatar"><img src="img/persona2.png" alt="Secondary persona photo"></div>
+              <div class="persona-header-text">
+                <span class="persona-label secondary-label">Secondary Persona</span>
+                <h3 class="persona-name">Mr. Li</h3>
+                <p class="persona-subtitle">Retired resident · Light daily jogger · Wants a safe and simple jogging experience</p>
+              </div>
+            </div>
+            <div class="persona-quote">
+              <p>"I do not need a complicated app. I just want something simple, readable, and encouraging for my daily jogging."</p>
+            </div>
+            <div class="persona-tags">
+              <span class="ptag">Age: 67</span>
+              <span class="ptag">Role: Retired resident</span>
+              <span class="ptag">Goal: Maintain a healthy routine</span>
+              <span class="ptag">Level: Light jogger</span>
+            </div>
+            <div class="persona-bg-section">
+              <h4>Background</h4>
+              <p>Mr. Li is a retired older adult who does light daily jogging to maintain his health and wants a simple, safe, and encouraging experience. He already has the willingness to exercise regularly, but many fitness apps feel too complex and too crowded for him. He values clear instructions, easy navigation, and information that helps him feel safe and supported.</p>
+            </div>
+            <div class="persona-quad">
+              <div class="pquad-item needs">
+                <strong>Needs</strong>
+                <p>A simple interface, clear jogging guidance, easy progress tracking, and health-friendly support.</p>
+              </div>
+              <div class="pquad-item pain">
+                <strong>Pain Points</strong>
+                <p>Many running apps are too complex, too competitive, or difficult for older adults to use confidently.</p>
+              </div>
+              <div class="pquad-item motivation">
+                <strong>Motivation</strong>
+                <p>He wants a tool that helps him keep a safe and regular jogging habit for better health.</p>
+              </div>
+              <div class="pquad-item opportunity">
+                <strong>Design Opportunity</strong>
+                <p>Use readable layouts, clear guidance, and supportive health-oriented feedback to reduce barriers.</p>
+              </div>
+            </div>
+            <ul class="persona-scenarios">
+              <li><span class="scenario-check">✓</span><span><strong>Typical scenario:</strong> Mr. Li checks the app in the morning before going out for a light jog in the community.</span></li>
+              <li><span class="scenario-check">✓</span><span><strong>Frustration:</strong> Small text, too many steps, or unclear wording may make him stop using the app.</span></li>
+              <li><span class="scenario-check">✓</span><span><strong>Expectation:</strong> He expects a calm, simple, and reassuring experience that is easy to return to every day.</span></li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="card reveal" style="margin-top: 24px;">
+          <div class="card-top">
+            <h3>GoRunners User Journey Map</h3>
+            <span class="chip">Pain-point focused</span>
+          </div>
+          <p class="small" style="margin-top: 8px; margin-bottom: 18px;">
+            This journey focuses on how a beginner runner discovers GoRunners, gets training support, joins a suitable run, participates in the activity, and decides whether to return.
+          </p>
+
+          <div class="journey">
+            <div class="journey-step">
+              <strong>Discover</strong>
+              <p class="small" style="margin-top:8px;"><strong>Goal:</strong> Understand what GoRunners offers and whether it is suitable for a beginner runner.</p>
+              <p class="small"><strong>Action:</strong> Visit the homepage, scan the navigation, and look for a clear starting point.</p>
+              <div class="pain">Pain point: the user may not know whether to start with finding a run, using the training assistant, or browsing the map.</div>
+              <p class="small" style="margin-top:8px;"><strong>Design response:</strong> Highlight clear entry paths such as Get Training Help and Find a Run.</p>
+            </div>
+            <div class="journey-step">
+              <strong>Plan</strong>
+              <p class="small" style="margin-top:8px;"><strong>Goal:</strong> Get a safe and practical weekly running plan based on current ability and personal goals.</p>
+              <p class="small"><strong>Action:</strong> Open the training assistant, enter running level, goal, and condition, then ask for guidance.</p>
+              <div class="pain">Pain point: beginners may struggle to describe their goals clearly and may worry that the advice is too difficult or unrealistic.</div>
+              <p class="small" style="margin-top:8px;"><strong>Design response:</strong> Use structured inputs and supportive prompts to generate beginner-friendly plans with clear pacing, warm-up, and recovery advice.</p>
+            </div>
+            <div class="journey-step">
+              <strong>Join</strong>
+              <p class="small" style="margin-top:8px;"><strong>Goal:</strong> Find a suitable running activity that matches fitness level, confidence, and motivation.</p>
+              <p class="small"><strong>Action:</strong> Explore runs, compare distance, pace, time, and route details, then decide whether to join an event.</p>
+              <div class="pain">Pain point: it can be difficult for beginners to judge which event is suitable, especially when they are unsure of their own pace or stamina.</div>
+              <p class="small" style="margin-top:8px;"><strong>Design response:</strong> Show clear labels for difficulty, pace range, distance, and beginner-friendly suitability.</p>
+            </div>
+            <div class="journey-step">
+              <strong>Participate</strong>
+              <p class="small" style="margin-top:8px;"><strong>Goal:</strong> Attend the activity smoothly and feel supported during the run.</p>
+              <p class="small"><strong>Action:</strong> Arrive at the meetup point, follow the route or map, and complete the running activity.</p>
+              <div class="pain">Pain point: the user may feel nervous or unsupported if route guidance, meetup details, or activity flow are unclear.</div>
+              <p class="small" style="margin-top:8px;"><strong>Design response:</strong> Provide simple route information, visible meetup details, and lightweight participation support such as map guidance or check-in feedback.</p>
+            </div>
+            <div class="journey-step">
+              <strong>Return</strong>
+              <p class="small" style="margin-top:8px;"><strong>Goal:</strong> Reflect on progress, stay motivated, and continue using GoRunners.</p>
+              <p class="small"><strong>Action:</strong> Review the run, ask follow-up questions, check progress, and decide whether to join another run.</p>
+              <div class="pain">Pain point: without encouragement, social feedback, or clear next steps, the user may lose motivation and not return.</div>
+              <p class="small" style="margin-top:8px;"><strong>Design response:</strong> Use post-run feedback, recovery suggestions, progress visibility, and community interaction to encourage continued engagement.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="g3" style="margin-top: 24px;">
+          <article class="card reveal">
+            <div class="chip">Must-have 01</div>
+            <h3 style="margin-top: 14px;">Clear starting guidance</h3>
+            <p style="margin-top: 8px;">The system should help new runners quickly understand where to begin, whether that is getting a training plan, finding a suitable run, or exploring the platform.</p>
+          </article>
+          <article class="card reveal">
+            <div class="chip">Must-have 02</div>
+            <h3 style="margin-top: 14px;">Beginner-friendly support</h3>
+            <p style="margin-top: 8px;">The system should provide realistic training suggestions, appropriate activity information, and supportive wording so beginner runners feel safe and confident.</p>
+          </article>
+          <article class="card reveal">
+            <div class="chip">Must-have 03</div>
+            <h3 style="margin-top: 14px;">Motivation and continuity</h3>
+            <p style="margin-top: 8px;">The system should encourage users to return through progress feedback, recovery support, and clear next-step recommendations after each interaction or run.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="ideation">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">03 · Ideation & Alternatives</div>
+          <h2>Document the thinking, not just the final answer.</h2>
+          <p>
+            Show evidence of divergence and convergence: sketches, multiple solution paths, and why you selected one direction over the others.
+          </p>
+        </div>
+
+        <div class="card reveal">
+          <div class="card-top">
+            <h3>Crazy Eights sketch gallery</h3>
+            <span class="chip">Replace with your photos</span>
+          </div>
+          <div class="gallery">
+            <div class="gallery-card"><div class="sketch"></div><p class="small" style="margin-top:10px;">Sketch 01</p></div>
+            <div class="gallery-card"><div class="sketch"></div><p class="small" style="margin-top:10px;">Sketch 02</p></div>
+            <div class="gallery-card"><div class="sketch"></div><p class="small" style="margin-top:10px;">Sketch 03</p></div>
+            <div class="gallery-card"><div class="sketch"></div><p class="small" style="margin-top:10px;">Sketch 04</p></div>
+            <div class="gallery-card"><div class="sketch"></div><p class="small" style="margin-top:10px;">Sketch 05</p></div>
+            <div class="gallery-card"><div class="sketch"></div><p class="small" style="margin-top:10px;">Sketch 06</p></div>
+            <div class="gallery-card"><div class="sketch"></div><p class="small" style="margin-top:10px;">Sketch 07</p></div>
+            <div class="gallery-card"><div class="sketch"></div><p class="small" style="margin-top:10px;">Sketch 08</p></div>
+          </div>
+        </div>
+
+        <div class="g3" style="margin-top: 24px;">
+          <article class="card reveal">
+            <div class="chip">Alternative A</div>
+            <h3 style="margin-top: 14px;">Exploration-first</h3>
+            <p style="margin-top: 8px;">Best for discovery and narrative. Good emotional framing, but may increase cognitive load for first-time users.</p>
+            <ul class="list">
+              <li><span class="check">✓</span><span>Strong storytelling</span></li>
+              <li><span class="check">✓</span><span>Immersive visuals</span></li>
+              <li><span class="check">✓</span><span>Weak task efficiency</span></li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <div class="chip">Alternative B</div>
+            <h3 style="margin-top: 14px;">Task-first dashboard</h3>
+            <p style="margin-top: 8px;">Efficient and clear, but may feel too functional. Needs stronger playful interactions and social energy.</p>
+            <ul class="list">
+              <li><span class="check">✓</span><span>Easy to navigate</span></li>
+              <li><span class="check">✓</span><span>High clarity</span></li>
+              <li><span class="check">✓</span><span>Lower emotional engagement</span></li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <div class="chip">Selected direction</div>
+            <h3 style="margin-top: 14px;">Balanced playful workflow</h3>
+            <p style="margin-top: 8px;">Combines the strongest parts of both directions: clear tasks, fast onboarding, and a playful reward loop.</p>
+            <ul class="list">
+              <li><span class="check">✓</span><span>Meets user requirements</span></li>
+              <li><span class="check">✓</span><span>Supports motivation</span></li>
+              <li><span class="check">✓</span><span>More feasible for Week 10</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="prototype">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">04 · Prototype & Technical Implementation</div>
+          <h2>Present the system like a real product, not just screenshots.</h2>
+          <p>
+            This section is where your portfolio starts feeling substantial: a Figma link, system architecture, high-fidelity interface, live URL, and individual contributions.
+          </p>
+        </div>
+
+        <div class="g2">
+          <article class="card reveal">
+            <div class="card-top">
+              <h3>High-fidelity mobile view</h3>
+              <span class="chip">Replace with real screenshots</span>
+            </div>
+            <div class="proto-frame">
+              <div class="phone">
+                <div class="phone-screen">
+                  <div>
+                    <div class="chip">Prototype</div>
+                    <h3 style="margin-top: 10px; color: #fff;">Main screen title</h3>
+                    <p class="small" style="margin-top: 8px; color: rgba(255,255,255,0.6);">Use this area for your project name and value proposition.</p>
+                  </div>
+                  <div class="feature-grid">
+                    <div class="feature-block"><strong>Feature 1</strong><p class="small" style="margin-top:8px;">Playful interaction</p></div>
+                    <div class="feature-block"><strong>Feature 2</strong><p class="small" style="margin-top:8px;">Social feedback</p></div>
+                    <div class="feature-block"><strong>Feature 3</strong><p class="small" style="margin-top:8px;">Progress tracking</p></div>
+                    <div class="feature-block"><strong>Feature 4</strong><p class="small" style="margin-top:8px;">Rewards or reflection</p></div>
+                  </div>
+                  <div class="feature-block" style="min-height: 180px;">
+                    <strong>Replace with screenshot</strong>
+                    <p class="small" style="margin-top: 8px;">You can also turn this block into an actual image tag linked to your prototype screenshots.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-top">
+              <h3>System architecture</h3>
+              <span class="chip">Data flow</span>
+            </div>
+            <div class="architecture">
+              <div class="arch-node">
+                <strong>User Input</strong>
+                <p class="small" style="margin-top:8px;">Tap, type, upload, select, or interact.</p>
+              </div>
+              <div class="arch-node">
+                <strong>Front-end Logic</strong>
+                <p class="small" style="margin-top:8px;">Validation, state, transitions, feedback.</p>
+              </div>
+              <div class="arch-node">
+                <strong>Data / Rules</strong>
+                <p class="small" style="margin-top:8px;">Progress, rewards, content, matching.</p>
+              </div>
+              <div class="arch-node">
+                <strong>User Outcome</strong>
+                <p class="small" style="margin-top:8px;">Visible progress, engagement, reflection.</p>
+              </div>
+            </div>
+            <div class="g2" style="margin-top: 18px; background: transparent; border: none; gap: 16px;">
+              <div class="note ai">
+                <strong>Figma prototype</strong>
+                <p class="small">Add a real Figma link here: <span class="muted">https://figma.com/...</span></p>
+              </div>
+              <div class="note kpi">
+                <strong>Live system URL</strong>
+                <p class="small">Add your deployed link here: <span class="muted">https://yourproject.github.io</span></p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <article class="card reveal" style="margin-top: 24px;">
+          <div class="card-top">
+            <h3>Individual contributions</h3>
+            <span class="chip">4 members</span>
+          </div>
+          <div class="comparison-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Member</th>
+                  <th>Role</th>
+                  <th>Main contribution</th>
+                  <th>Evidence</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Junhong Liao</td><td>Example: Front-end / Research</td><td>UI implementation, code structure, literature review, testing.</td><td>Git commits, screenshots, meeting notes, prototype pages.</td></tr>
+                <tr><td>Yufeng Du</td><td>Example: System logic / Data</td><td>Interactive features, architecture, content organization, debugging.</td><td>Component files, flow diagrams, evaluation records.</td></tr>
+                <tr><td>Xiaohan Qiu</td><td>Example: Research / Evaluation</td><td>Paper review, personas, usability study, insight synthesis.</td><td>Interview notes, testing summary, reflection drafts.</td></tr>
+                <tr><td>Sunxi Peng</td><td>Example: Content / Presentation</td><td>Portfolio writing, visual assets, prototype polishing, slides or video support.</td><td>Portfolio sections, media assets, design revisions.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="evaluation">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">05 · Evaluation & Iteration</div>
+          <h2>Prove that your design changed because of user feedback.</h2>
+          <p>
+            Your evaluation section should not be vague. Show who you tested with, what they struggled with, what quotes you captured, and exactly what you changed afterward.
+          </p>
+        </div>
+
+        <div class="g3">
+          <article class="card reveal">
+            <div class="chip">Tester 01</div>
+            <h3 style="margin-top: 14px;">Usability insight</h3>
+            <p style="margin-top: 8px;">“I like the concept, but I was not sure what to do first.”</p>
+            <ul class="list">
+              <li><span class="check">✓</span><span>Issue: onboarding unclear</span></li>
+              <li><span class="check">✓</span><span>Action: simplified first screen</span></li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <div class="chip">Tester 02</div>
+            <h3 style="margin-top: 14px;">Usability insight</h3>
+            <p style="margin-top: 8px;">“The rewards are interesting, but I want more feedback during the process.”</p>
+            <ul class="list">
+              <li><span class="check">✓</span><span>Issue: feedback too late</span></li>
+              <li><span class="check">✓</span><span>Action: added progress cues</span></li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <div class="chip">Tester 03</div>
+            <h3 style="margin-top: 14px;">Usability insight</h3>
+            <p style="margin-top: 8px;">“The social feature is useful, but I need more confidence to share.”</p>
+            <ul class="list">
+              <li><span class="check">✓</span><span>Issue: sharing anxiety</span></li>
+              <li><span class="check">✓</span><span>Action: softer prompts and privacy cues</span></li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="before-after" style="margin-top: 24px;">
+          <article class="ba-panel reveal">
+            <div class="chip" style="background: rgba(239,68,68,0.1); color: #fca5a5;">Before</div>
+            <h3 style="margin-top: 14px;">Original design</h3>
+            <p style="margin-top: 8px;">Replace this with a real description of the earlier prototype and its usability problem.</p>
+            <div class="wire">
+              <div class="bar" style="width: 20%; background: rgba(239,68,68,0.2);"></div>
+              <div class="bar" style="width: 70%; background: rgba(239,68,68,0.1);"></div>
+              <div class="box a" style="background: rgba(239,68,68,0.08);"></div>
+              <div class="box b" style="background: rgba(239,68,68,0.08);"></div>
+              <div class="box c" style="background: rgba(239,68,68,0.1);"></div>
+            </div>
+          </article>
+          <article class="ba-panel reveal">
+            <div class="chip" style="background: rgba(34,197,94,0.1); color: #86efac;">After</div>
+            <h3 style="margin-top: 14px;">Refined design</h3>
+            <p style="margin-top: 8px;">Replace this with the improved version and explain why it better supports your users’ needs.</p>
+            <div class="wire">
+              <div class="bar" style="width: 26%; background: rgba(34,197,94,0.2);"></div>
+              <div class="bar" style="width: 84%; background: rgba(34,197,94,0.1);"></div>
+              <div class="box a" style="background: rgba(34,197,94,0.08);"></div>
+              <div class="box b" style="background: rgba(34,197,94,0.08);"></div>
+              <div class="box c" style="background: rgba(34,197,94,0.1);"></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="g2" style="margin-top: 24px;">
+          <article class="quote reveal">
+            <strong>Social and ethical reflection</strong>
+            <p style="margin-top: 10px;">
+              Replace this with your real reflection: accessibility support, inclusive language, privacy considerations, fairness of rewards, and whether playful mechanics could pressure or exclude some users.
+            </p>
+          </article>
+          <article class="quote reveal">
+            <strong>Design implication</strong>
+            <p style="margin-top: 10px;">
+              Explain what your prototype suggests for future development. Mention scope limits, what you would test next, and how the concept might scale beyond your current context.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="team">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">06 · Team</div>
+          <h2>Our team.</h2>
+          <p>Meet the people behind GoRunners.</p>
+        </div>
+
+        <div class="team-grid">
+          <article class="team-card reveal">
+            <div class="team-avatar"><img src="img/liao.JPG" alt="Junhong Liao"></div>
+            <div class="team-info">
+              <h3>Junhong Liao</h3>
+              <span class="team-role">Student ID: 2363229</span>
+              <p>XJTLU CS student &amp; published researcher. Skilled in Python/MATLAB with MCM Honorable Mention. Experienced team leader passionate about AI and problem-solving.</p>
+            </div>
+          </article>
+
+          <article class="team-card reveal">
+            <div class="team-avatar"><img src="img/du.png" alt="Yufeng Du"></div>
+            <div class="team-info">
+              <h3>Yufeng Du</h3>
+              <span class="team-role">Student ID: 2362479</span>
+              <p>XJTLU ICS student with 3.7 GPA, served as a surf member. Proficient in Python/Java, interested in AI model exploration. Hobbies include music, Go, and badminton.</p>
+            </div>
+          </article>
+
+          <article class="team-card reveal">
+            <div class="team-avatar"><img src="img/qiu.png" alt="Xiaohan Qiu"></div>
+            <div class="team-info">
+              <h3>Xiaohan Qiu</h3>
+              <span class="team-role">Student ID: 2360886</span>
+              <p>XJTLU ICS student, two-time SURF researcher (CAD/FEA &amp; AI imaging), MCM Honorable Mention. Skilled in Python/SQL, experienced in teamwork and leadership.</p>
+            </div>
+          </article>
+
+          <article class="team-card reveal">
+            <div class="team-avatar"><img src="img/peng.png" alt="Sunxi Peng"></div>
+            <div class="team-info">
+              <h3>Sunxi Peng</h3>
+              <span class="team-role">Student ID: 2361598</span>
+              <p>XJTLU ICS student (GPA 3.7), experienced calculus teaching assistant. Skilled in Python/Java, passionate about AI and model training. Enjoys music, Go, and reading.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="reflection">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">07 · Technical Reflection</div>
+          <h2>Explain how AI was used, verified, and constrained.</h2>
+          <p>
+            This is one of the most important coursework-specific sections. Be explicit about what the model helped with, how you checked the output, and what ethical concerns you considered.
+          </p>
+        </div>
+
+        <div class="g3">
+          <article class="card reveal">
+            <div class="chip">Prompt log</div>
+            <h3 style="margin-top: 14px;">What prompts were used</h3>
+            <p style="margin-top: 8px;">List the main prompts used for code scaffolding, CSS refinement, interface ideas, or debugging. Keep them concrete.</p>
+          </article>
+          <article class="card reveal">
+            <div class="chip">Verification</div>
+            <h3 style="margin-top: 14px;">How the code was checked</h3>
+            <p style="margin-top: 8px;">Explain how your group validated behavior, tested responsiveness, confirmed requirements, and fixed incorrect AI outputs.</p>
+          </article>
+          <article class="card reveal">
+            <div class="chip">Ethics</div>
+            <h3 style="margin-top: 14px;">Accessibility and bias considerations</h3>
+            <p style="margin-top: 8px;">Discuss readability, keyboard access, visual contrast, and any risk of excluding certain users or automating weak assumptions.</p>
+          </article>
+        </div>
+
+        <div class="card reveal" style="margin-top: 24px;">
+          <div class="card-top">
+            <h3>References & acknowledgments</h3>
+            <span class="chip">Replace with your real list</span>
+          </div>
+          <div class="refs">
+            <p>[1] Academic paper reference placeholder.</p>
+            <p>[2] Academic paper reference placeholder.</p>
+            <p>[3] Academic paper reference placeholder.</p>
+            <p>[4] Commercial product reference placeholder.</p>
+            <p>[5] AI tool citation placeholder, if used.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-card">
+        <div>
+          <h3>Ready for GitHub Pages</h3>
+          <p style="margin-top: 8px;">This single-file template is designed to be easy to upload and customize. Replace the placeholders with your own text, screenshots, photos, links, and evidence.</p>
+        </div>
+        <a class="btn btn-primary" href="#overview">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ===== Reveal on scroll ===== */
+    const revealItems = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealItems.forEach(item => io.observe(item));
+
+    /* ===== Navigation ===== */
+    const links = document.querySelectorAll('.nav-links a');
+    const sections = [...document.querySelectorAll('main section')];
+
+    // Highlight active link based on scroll
+    const setActiveLink = () => {
+      const scrollPos = window.scrollY + 160;
+      let current = sections[0]?.id || '';
+      sections.forEach(section => {
+        if (section.offsetTop <= scrollPos) current = section.id;
+      });
+      links.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+      });
+    };
+    window.addEventListener('scroll', setActiveLink);
+    setActiveLink();
+
+    // Smooth scroll for nav clicks
+    links.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const target = document.getElementById(targetId);
+        if (!target) return;
+        const navHeight = document.querySelector('.nav-wrap').offsetHeight;
+        const targetPos = target.getBoundingClientRect().top + window.scrollY - navHeight - 20;
+        window.scrollTo({ top: targetPos, behavior: 'smooth' });
+        history.pushState(null, null, `#${targetId}`);
+      });
+    });
+
+    // Back to top behavior
+    const backToTop = document.querySelector('footer .btn');
+    if (backToTop) {
+      backToTop.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+    /* ===== Algorithmic Donut 3D Engine ===== */
+    const canvas = document.getElementById('donutCanvas');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    
+    function resize() {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    // Fade out donut on scroll
+    window.addEventListener('scroll', () => {
+      const scrollPercent = Math.min(window.scrollY / (window.innerHeight * 0.8), 1);
+      canvas.style.opacity = 1 - scrollPercent;
+    });
+
+    const particles = [];
+    const NUM_PARTICLES = 2500;
+    const R = 220; // Major radius
+    const r = 80;  // Minor radius
+    
+    // Initialize Torus Particles
+    for (let i = 0; i < NUM_PARTICLES; i++) {
+      const u = Math.random() * Math.PI * 2;
+      const v = Math.random() * Math.PI * 2;
+      
+      // Calculate 3D base position
+      const bx = (R + r * Math.cos(v)) * Math.cos(u);
+      const by = (R + r * Math.cos(v)) * Math.sin(u);
+      const bz = r * Math.sin(v);
+      
+      particles.push({
+        baseX: bx, baseY: by, baseZ: bz,
+        lx: 0, ly: 0, // logical 2D position
+        vx: 0, vy: 0, // velocity
+        // Create an accent distribution (neon orange vs tech blue/white)
+        isAccent: Math.random() > 0.85
+      });
+    }
+
+    let mouse = { x: -9999, y: -9999 };
+    window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+    window.addEventListener('touchmove', e => { mouse.x = e.touches[0].clientX; mouse.y = e.touches[0].clientY; });
+    window.addEventListener('mouseout', () => { mouse.x = -9999; mouse.y = -9999; });
+
+    let time = 0;
+    function animate() {
+      time += 0.005;
+      
+      // Clear with slight trailing effect for motion blur
+      ctx.fillStyle = 'rgba(6, 6, 8, 0.2)';
+      ctx.fillRect(0, 0, width, height);
+      
+      const cx = width / 2;
+      const cy = height / 2;
+      
+      // Rotation matrices based on time
+      const cosX = Math.cos(time * 0.8); const sinX = Math.sin(time * 0.8);
+      const cosY = Math.cos(time * 1.2); const sinY = Math.sin(time * 1.2);
+      const cosZ = Math.cos(time * 0.3); const sinZ = Math.sin(time * 0.3);
+
+      for (let p of particles) {
+        // 1. Rotate base 3D coordinates
+        // Rotate X
+        let y1 = p.baseY * cosX - p.baseZ * sinX;
+        let z1 = p.baseY * sinX + p.baseZ * cosX;
+        // Rotate Y
+        let x2 = p.baseX * cosY + z1 * sinY;
+        let z2 = -p.baseX * sinY + z1 * cosY;
+        // Rotate Z
+        let targetX = x2 * cosZ - y1 * sinZ;
+        let targetY = x2 * sinZ + y1 * cosZ;
+        
+        // 2. Add fake perspective scalar
+        const perspective = 800 / (800 - z2);
+        targetX = cx + targetX * perspective;
+        targetY = cy + targetY * perspective;
+        
+        // Initialize logical position on first frame to prevent flying in
+        if (p.lx === 0 && p.ly === 0) { p.lx = targetX; p.ly = targetY; }
+
+        // 3. Mouse Interaction (Repel/Destruction)
+        const dx = p.lx - mouse.x;
+        const dy = p.ly - mouse.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        
+        if (dist < 180) {
+          const force = (180 - dist) / 180;
+          p.vx += (dx / dist) * force * 12; // Explosive push
+          p.vy += (dy / dist) * force * 12;
+        }
+
+        // 4. Spring Physics (Elastic return to target)
+        const springDx = targetX - p.lx;
+        const springDy = targetY - p.ly;
+        
+        p.vx += springDx * 0.05; // Spring stiffness
+        p.vy += springDy * 0.05;
+        
+        // Friction / Damping
+        p.vx *= 0.85; 
+        p.vy *= 0.85;
+        
+        // Update logical position
+        p.lx += p.vx;
+        p.ly += p.vy;
+
+        // 5. Render
+        const size = Math.max(0.5, 2.5 * perspective);
+        // Dim particles that are further back, brighten front particles
+        const alpha = Math.min(1, Math.max(0.1, (z2 + r + R) / (2 * (r + R))));
+        
+        if (p.isAccent) {
+          // Neon Orange for sports accent
+          ctx.fillStyle = `rgba(249, 115, 22, ${alpha * 1.5})`; 
+        } else {
+          // Sci-fi tech blue/white
+          ctx.fillStyle = `rgba(180, 200, 255, ${alpha * 0.8})`;
+        }
+
+        ctx.beginPath();
+        ctx.arc(p.lx, p.ly, size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      
+      requestAnimationFrame(animate);
+    }
+    
+    animate();
+  </script>
+</body>
+</html>
