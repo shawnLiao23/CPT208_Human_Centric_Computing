@@ -473,6 +473,16 @@ ul.list{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:14px}
   margin-top:18px;padding:18px;border-radius:8px;
   background:rgba(255,255,255,.03);display:grid;gap:10px;
 }
+.ba-shot{
+  margin-top:16px;
+  width:100%;
+  border-radius:8px;
+  border:1px solid var(--line);
+  background:#0b0b0f;
+  padding:6px;
+  max-height:420px;
+  object-fit:contain;
+}
 .bar{height:8px;border-radius:4px;background:rgba(255,255,255,.08)}
 .bar:first-child{width:36%}
 .bar:nth-child(2){width:80%}
@@ -480,6 +490,33 @@ ul.list{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:14px}
 .box.a{height:48px}
 .box.b{height:36px}
 .box.c{height:28px}
+
+/* Evaluation chart */
+.metrics-chart{
+  margin-top:24px;
+  padding:28px;
+  border-radius:6px;
+  background:var(--surface);
+  border:1px solid var(--line);
+}
+.chart-wrap{overflow-x:auto;margin-top:16px}
+.metrics-svg{width:100%;min-width:760px;height:auto;display:block}
+.chart-legend{
+  display:flex;
+  gap:16px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-top:12px;
+  color:var(--muted);
+  font-size:.82rem;
+}
+.legend-dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  display:inline-block;
+  margin-right:6px;
+}
 
 /* Quote cards */
 .quote{

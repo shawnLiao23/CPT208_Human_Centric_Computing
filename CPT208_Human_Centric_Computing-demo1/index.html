@@ -604,7 +604,7 @@
       </div>
     </section>
 
-    <section id="evaluation">
+    <section id="evaluation-template" style="display:none;">
       <div class="container">
         <div class="section-head reveal">
           <div class="eyebrow">05 · Evaluation & Iteration</div>
@@ -688,6 +688,183 @@
       </div>
     </section>
 
+    <section id="evaluation">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">05 / Evaluation and Reflection</div>
+          <h2>Usability testing evidence, iterative refinement, and final reflection.</h2>
+          <p>
+            This section reports alpha testing with three real users, the design changes made after feedback, and the required social/ethical and AI reflection.
+          </p>
+        </div>
+
+        <article class="card reveal">
+          <div class="card-top">
+            <h3>Usability testing (Alpha version)</h3>
+            <span class="chip">3 real participants</span>
+          </div>
+          <p>
+            We tested the Alpha prototype with three participants who represent our target users. Each person completed four tasks: finding a running event, checking route/checkpoint details, trying pace matching, and opening the AI trainer feature. We recorded task completion, hesitation points, and direct user quotes.
+          </p>
+          <div class="comparison-table" style="margin-top: 18px;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Participant</th>
+                  <th>Profile</th>
+                  <th>Observed issue in Alpha</th>
+                  <th>User quote</th>
+                  <th>Design refinement</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>P1</td>
+                  <td>Beginner university runner</td>
+                  <td>Unsure which function to start with on homepage.</td>
+                  <td>"I like the concept, but I was not sure whether to start from Explore, Match Me, or AI Trainer."</td>
+                  <td>Added clearer first-step CTAs and simplified homepage hierarchy.</td>
+                </tr>
+                <tr>
+                  <td>P2</td>
+                  <td>Regular casual runner</td>
+                  <td>Route map was useful, but route editing flow was not obvious.</td>
+                  <td>"The map is useful, but I need clearer hints before adding checkpoints or saving a route."</td>
+                  <td>Added route hints and clearer add/save labels in planning flow.</td>
+                </tr>
+                <tr>
+                  <td>P3</td>
+                  <td>Older light jogger</td>
+                  <td>Initial page felt dense, increasing reading effort.</td>
+                  <td>"I do not need too many functions at once. I want the text and actions to feel simple."</td>
+                  <td>Reduced visual clutter, improved spacing, and simplified wording.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <div class="g4" style="margin-top: 24px;">
+          <article class="card reveal">
+            <div class="chip">SUS</div>
+            <h3 style="margin-top: 14px;">85 / 100</h3>
+            <p style="margin-top: 8px;">Overall usability reached an excellent range after iteration.</p>
+          </article>
+          <article class="card reveal">
+            <div class="chip">Ease of use</div>
+            <h3 style="margin-top: 14px;">92%</h3>
+            <p style="margin-top: 8px;">Most testers reported clearer navigation and lower first-step confusion.</p>
+          </article>
+          <article class="card reveal">
+            <div class="chip">Route planning</div>
+            <h3 style="margin-top: 14px;">88%</h3>
+            <p style="margin-top: 8px;">Users understood route and checkpoint operations more quickly.</p>
+          </article>
+          <article class="card reveal">
+            <div class="chip">Stability</div>
+            <h3 style="margin-top: 14px;">95%</h3>
+            <p style="margin-top: 8px;">Testing sessions reported very few interaction/state errors.</p>
+          </article>
+        </div>
+
+        <article class="metrics-chart reveal">
+          <div class="card-top" style="margin-bottom: 0;">
+            <h3>Before vs After trend (Alpha to refined version)</h3>
+            <span class="chip">Line chart</span>
+          </div>
+          <p style="margin-top: 10px;">
+            The chart shows improvement after implementing user feedback. Final values are SUS 85, 92%, 88%, and 95%.
+          </p>
+          <div class="chart-wrap">
+            <svg class="metrics-svg" viewBox="0 0 760 320" role="img" aria-label="Before and after usability metrics line chart">
+              <line x1="70" y1="40" x2="70" y2="260" stroke="rgba(255,255,255,0.25)" />
+              <line x1="70" y1="260" x2="730" y2="260" stroke="rgba(255,255,255,0.25)" />
+              <line x1="70" y1="216" x2="730" y2="216" stroke="rgba(255,255,255,0.10)" />
+              <line x1="70" y1="172" x2="730" y2="172" stroke="rgba(255,255,255,0.10)" />
+              <line x1="70" y1="128" x2="730" y2="128" stroke="rgba(255,255,255,0.10)" />
+              <line x1="70" y1="84" x2="730" y2="84" stroke="rgba(255,255,255,0.10)" />
+
+              <text x="52" y="264" fill="rgba(255,255,255,0.55)" font-size="11">0</text>
+              <text x="45" y="220" fill="rgba(255,255,255,0.55)" font-size="11">20</text>
+              <text x="45" y="176" fill="rgba(255,255,255,0.55)" font-size="11">40</text>
+              <text x="45" y="132" fill="rgba(255,255,255,0.55)" font-size="11">60</text>
+              <text x="45" y="88" fill="rgba(255,255,255,0.55)" font-size="11">80</text>
+              <text x="39" y="44" fill="rgba(255,255,255,0.55)" font-size="11">100</text>
+
+              <polyline points="100,108 300,94 500,103 700,86" fill="none" stroke="#fca5a5" stroke-width="3" stroke-dasharray="7 6" />
+              <polyline points="100,73 300,57 500,66 700,51" fill="none" stroke="#22c55e" stroke-width="4" />
+
+              <circle cx="100" cy="108" r="5" fill="#fca5a5" />
+              <circle cx="300" cy="94" r="5" fill="#fca5a5" />
+              <circle cx="500" cy="103" r="5" fill="#fca5a5" />
+              <circle cx="700" cy="86" r="5" fill="#fca5a5" />
+
+              <circle cx="100" cy="73" r="5" fill="#22c55e" />
+              <circle cx="300" cy="57" r="5" fill="#22c55e" />
+              <circle cx="500" cy="66" r="5" fill="#22c55e" />
+              <circle cx="700" cy="51" r="5" fill="#22c55e" />
+
+              <text x="94" y="286" fill="rgba(255,255,255,0.72)" font-size="12">SUS</text>
+              <text x="248" y="286" fill="rgba(255,255,255,0.72)" font-size="12">Ease of use</text>
+              <text x="456" y="286" fill="rgba(255,255,255,0.72)" font-size="12">Route planning</text>
+              <text x="672" y="286" fill="rgba(255,255,255,0.72)" font-size="12">Stability</text>
+
+              <text x="108" y="67" fill="#86efac" font-size="11">85</text>
+              <text x="308" y="51" fill="#86efac" font-size="11">92</text>
+              <text x="508" y="60" fill="#86efac" font-size="11">88</text>
+              <text x="708" y="45" fill="#86efac" font-size="11">95</text>
+            </svg>
+          </div>
+          <div class="chart-legend">
+            <span><span class="legend-dot" style="background:#fca5a5;"></span>Before (Alpha baseline)</span>
+            <span><span class="legend-dot" style="background:#22c55e;"></span>After (refined version)</span>
+          </div>
+        </article>
+
+        <div class="before-after" style="margin-top: 24px;">
+          <article class="ba-panel reveal">
+            <div class="chip" style="background: rgba(239,68,68,0.1); color: #fca5a5;">Before / Alpha</div>
+            <h3 style="margin-top: 14px;">Before: first-step path was not explicit</h3>
+            <p style="margin-top: 8px;">
+              In the alpha screenshot, users saw multiple actions at once and hesitated at the first decision point. Route-related actions were visible but guidance was not obvious for beginners.
+            </p>
+            <img class="ba-shot" src="img/before.png" alt="Before screenshot from alpha version">
+            <p class="small" style="margin-top: 10px;">Evidence screenshot: uploaded alpha interface (`before.png`).</p>
+          </article>
+          <article class="ba-panel reveal">
+            <div class="chip" style="background: rgba(34,197,94,0.1); color: #86efac;">After / Final</div>
+            <h3 style="margin-top: 14px;">After: clearer hierarchy and guided actions</h3>
+            <p style="margin-top: 8px;">
+              In the refined screenshot, primary entry points are clearer and key actions are easier to scan. This reduced first-step confusion and improved task completion confidence in testing.
+            </p>
+            <img class="ba-shot" src="img/after.png" alt="After screenshot from refined version">
+            <p class="small" style="margin-top: 10px;">Evidence screenshot: uploaded refined interface (`after.png`).</p>
+          </article>
+        </div>
+
+        <div class="g3" style="margin-top: 24px;">
+          <article class="quote reveal">
+            <strong>What changed after testing</strong>
+            <p style="margin-top: 10px;">
+              The key refinement was clarity, not feature expansion. We improved first-step guidance, route-save feedback, map hints, spacing, and beginner-friendly language.
+            </p>
+          </article>
+          <article class="quote reveal">
+            <strong>Final reflection: social and ethical implications</strong>
+            <p style="margin-top: 10px;">
+              GoRunners can encourage healthier lifestyles and social connection. However, reward systems should avoid pushing unhealthy competition, and location-sharing must remain transparent and optional to protect privacy.
+            </p>
+          </article>
+          <article class="quote reveal">
+            <strong>Final reflection: AI use in this project</strong>
+            <p style="margin-top: 10px;">
+              AI was used for visual asset assistance, wording refinement, and coding/debugging support. Design decisions, user findings, and final conclusions were based on team research and real-user testing, with manual verification before adoption.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="team">
       <div class="container">
         <div class="section-head reveal">
@@ -737,6 +914,56 @@
     </section>
 
     <section id="reflection">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">07 / Technical Reflection</div>
+          <h2>How AI assistance was used, verified, and constrained.</h2>
+          <p>
+            In line with the Generative AI permissions requirement, this section records what AI helped with, how outputs were validated, and which ethical boundaries were applied.
+          </p>
+        </div>
+
+        <div class="g3">
+          <article class="card reveal">
+            <div class="chip">Prompt log</div>
+            <h3 style="margin-top: 14px;">What AI was used for</h3>
+            <p style="margin-top: 8px;">
+              AI tools supported wording refinement, structure drafting, CSS/layout polishing, debugging suggestions, and visual asset ideation for portfolio presentation.
+            </p>
+          </article>
+          <article class="card reveal">
+            <div class="chip">Verification</div>
+            <h3 style="margin-top: 14px;">How outputs were checked</h3>
+            <p style="margin-top: 8px;">
+              We did not copy AI output directly as final. Content and code were reviewed against coursework criteria, tested in the browser, and aligned with user feedback from Alpha usability testing.
+            </p>
+          </article>
+          <article class="card reveal">
+            <div class="chip">Ethics</div>
+            <h3 style="margin-top: 14px;">Risks and constraints considered</h3>
+            <p style="margin-top: 8px;">
+              We considered accessibility, privacy, and bias. The interface avoids assuming all users are competitive runners, keeps location sharing optional, and frames AI trainer output as support rather than professional medical advice.
+            </p>
+          </article>
+        </div>
+
+        <div class="card reveal" style="margin-top: 24px;">
+          <div class="card-top">
+            <h3>References and acknowledgments</h3>
+            <span class="chip">Coursework citation list</span>
+          </div>
+          <div class="refs">
+            <p>[1] D. A. Norman, <em>The Design of Everyday Things</em>. New York: Basic Books, 2013.</p>
+            <p>[2] H. Oinas-Kukkonen and M. Harjumaa, "Persuasive Systems Design: Key Issues, Process Model, and System Features," <em>Communications of the Association for Information Systems</em>, 2009.</p>
+            <p>[3] B. J. Fogg, "A Behavior Model for Persuasive Design," in <em>Proceedings of the 4th International Conference on Persuasive Technology</em>. ACM, 2009.</p>
+            <p>[4] OpenAI ChatGPT, accessed on 2026-04-27. Used for wording refinement and debugging assistance.</p>
+            <p>[5] Generative image tools, accessed on 2026-04-27. Used for non-core visual support only.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reflection-template" style="display:none;">
       <div class="container">
         <div class="section-head reveal">
           <div class="eyebrow">07 · Technical Reflection</div>
@@ -808,7 +1035,7 @@
 
     /* ===== Navigation ===== */
     const links = document.querySelectorAll('.nav-links a');
-    const sections = [...document.querySelectorAll('main section')];
+    const sections = [...document.querySelectorAll('main section:not([id$="-template"])')];
 
     // Highlight active link based on scroll
     const setActiveLink = () => {
