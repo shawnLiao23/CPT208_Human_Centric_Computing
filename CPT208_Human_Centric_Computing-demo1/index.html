@@ -354,54 +354,145 @@
           </p>
         </div>
 
-        <div class="card reveal">
-          <div class="card-top">
-            <h3>Crazy Eights sketch gallery</h3>
-            <span class="chip">Replace with your photos</span>
+        <div class="card sketch-board reveal">
+          <div class="sketch-board-head">
+            <div>
+              <div class="sketch-board-kicker">Divergent ideation</div>
+              <h3>Crazy Eights sketch gallery</h3>
+              <p>Eight quick interface directions captured before narrowing the final GoRunners workflow.</p>
+            </div>
+            <div class="sketch-count">8 sketches</div>
           </div>
-          <div class="gallery">
-            <div class="gallery-card"><div class="sketch"></div><p class="small" style="margin-top:10px;">Sketch 01</p></div>
-            <div class="gallery-card"><div class="sketch"></div><p class="small" style="margin-top:10px;">Sketch 02</p></div>
-            <div class="gallery-card"><div class="sketch"></div><p class="small" style="margin-top:10px;">Sketch 03</p></div>
-            <div class="gallery-card"><div class="sketch"></div><p class="small" style="margin-top:10px;">Sketch 04</p></div>
-            <div class="gallery-card"><div class="sketch"></div><p class="small" style="margin-top:10px;">Sketch 05</p></div>
-            <div class="gallery-card"><div class="sketch"></div><p class="small" style="margin-top:10px;">Sketch 06</p></div>
-            <div class="gallery-card"><div class="sketch"></div><p class="small" style="margin-top:10px;">Sketch 07</p></div>
-            <div class="gallery-card"><div class="sketch"></div><p class="small" style="margin-top:10px;">Sketch 08</p></div>
+          <div class="gallery sketch-gallery">
+            <figure class="gallery-card">
+              <button class="sketch-tile" type="button" data-sketch-src="img/sketch-01.png" data-sketch-title="Map-first">
+                <img src="img/sketch-01.png" alt="Sketch 01" loading="lazy" onerror="this.hidden=true">
+                <span class="sketch-placeholder">Sketch 01</span>
+              </button>
+              <figcaption>Map-first</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <button class="sketch-tile" type="button" data-sketch-src="img/sketch-02.png" data-sketch-title="Data-first">
+                <img src="img/sketch-02.png" alt="Sketch 02" loading="lazy" onerror="this.hidden=true">
+                <span class="sketch-placeholder">Sketch 02</span>
+              </button>
+              <figcaption>Data-first</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <button class="sketch-tile" type="button" data-sketch-src="img/sketch-03.png" data-sketch-title="Social-first">
+                <img src="img/sketch-03.png" alt="Sketch 03" loading="lazy" onerror="this.hidden=true">
+                <span class="sketch-placeholder">Sketch 03</span>
+              </button>
+              <figcaption>Social-first</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <button class="sketch-tile" type="button" data-sketch-src="img/sketch-04.png" data-sketch-title="Minimal">
+                <img src="img/sketch-04.png" alt="Sketch 04" loading="lazy" onerror="this.hidden=true">
+                <span class="sketch-placeholder">Sketch 04</span>
+              </button>
+              <figcaption>Minimal</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <button class="sketch-tile" type="button" data-sketch-src="img/sketch-05.png" data-sketch-title="Motivation">
+                <img src="img/sketch-05.png" alt="Sketch 05" loading="lazy" onerror="this.hidden=true">
+                <span class="sketch-placeholder">Sketch 05</span>
+              </button>
+              <figcaption>Motivation</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <button class="sketch-tile" type="button" data-sketch-src="img/sketch-06.png" data-sketch-title="AI Trainer">
+                <img src="img/sketch-06.png" alt="Sketch 06" loading="lazy" onerror="this.hidden=true">
+                <span class="sketch-placeholder">Sketch 06</span>
+              </button>
+              <figcaption>AI Trainer</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <button class="sketch-tile" type="button" data-sketch-src="img/sketch-07.png" data-sketch-title="Rewards">
+                <img src="img/sketch-07.png" alt="Sketch 07" loading="lazy" onerror="this.hidden=true">
+                <span class="sketch-placeholder">Sketch 07</span>
+              </button>
+              <figcaption>Rewards</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <button class="sketch-tile" type="button" data-sketch-src="img/sketch-08.png" data-sketch-title="Progression">
+                <img src="img/sketch-08.png" alt="Sketch 08" loading="lazy" onerror="this.hidden=true">
+                <span class="sketch-placeholder">Sketch 08</span>
+              </button>
+              <figcaption>Progression</figcaption>
+            </figure>
           </div>
         </div>
 
-        <div class="g3" style="margin-top: 24px;">
-          <article class="card reveal">
+        <div class="g3 alternatives-grid" style="margin-top: 24px;">
+          <article class="card alternative-card reveal" data-accent="ai">
             <div class="chip">Alternative A</div>
-            <h3 style="margin-top: 14px;">Exploration-first</h3>
-            <p style="margin-top: 8px;">Best for discovery and narrative. Good emotional framing, but may increase cognitive load for first-time users.</p>
-            <ul class="list">
+            <h3 style="margin-top: 14px;">AI-first</h3>
+            <p style="margin-top: 8px;"><strong>Core:</strong> AI coach + conversation-driven interaction.</p>
+            <p style="margin-top: 8px;">Focuses on AI-powered coaching through a conversational interface, providing personalized running advice and training plans.</p>
+            <ul class="list alternative-points">
+              <li><span class="check">+</span><span>Personalized guidance</span></li>
+              <li><span class="check">+</span><span>Interactive experience</span></li>
+              <li><span class="check">+</span><span>Supports learning and improvement</span></li>
+              <li><span class="check">-</span><span>May be complex for new users</span></li>
+              <li><span class="check">-</span><span>Relies heavily on user input</span></li>
+              <li><span class="check">-</span><span>Less immediate task visibility</span></li>
+            </ul>
+            <ul class="list legacy-alternative-list" aria-hidden="true">
               <li><span class="check">✓</span><span>Strong storytelling</span></li>
               <li><span class="check">✓</span><span>Immersive visuals</span></li>
               <li><span class="check">✓</span><span>Weak task efficiency</span></li>
             </ul>
           </article>
-          <article class="card reveal">
+          <article class="card alternative-card reveal" data-accent="data">
             <div class="chip">Alternative B</div>
-            <h3 style="margin-top: 14px;">Task-first dashboard</h3>
-            <p style="margin-top: 8px;">Efficient and clear, but may feel too functional. Needs stronger playful interactions and social energy.</p>
-            <ul class="list">
+            <h3 style="margin-top: 14px;">Data-first</h3>
+            <p style="margin-top: 8px;"><strong>Core:</strong> Data + statistics.</p>
+            <p style="margin-top: 8px;">Prioritizes performance tracking and structured data presentation, allowing users to monitor progress efficiently.</p>
+            <ul class="list alternative-points">
+              <li><span class="check">+</span><span>Clear and structured</span></li>
+              <li><span class="check">+</span><span>Efficient for goal tracking</span></li>
+              <li><span class="check">+</span><span>Easy to navigate</span></li>
+              <li><span class="check">-</span><span>Low emotional engagement</span></li>
+              <li><span class="check">-</span><span>Limited social interaction</span></li>
+              <li><span class="check">-</span><span>Less motivating for casual users</span></li>
+            </ul>
+            <ul class="list legacy-alternative-list" aria-hidden="true">
               <li><span class="check">✓</span><span>Easy to navigate</span></li>
               <li><span class="check">✓</span><span>High clarity</span></li>
               <li><span class="check">✓</span><span>Lower emotional engagement</span></li>
             </ul>
           </article>
-          <article class="card reveal">
+          <article class="card alternative-card selected-alternative reveal" data-accent="social">
             <div class="chip">Selected direction</div>
-            <h3 style="margin-top: 14px;">Balanced playful workflow</h3>
-            <p style="margin-top: 8px;">Combines the strongest parts of both directions: clear tasks, fast onboarding, and a playful reward loop.</p>
-            <ul class="list">
+            <h3 style="margin-top: 14px;">Social-first</h3>
+            <p style="margin-top: 8px;"><strong>Core:</strong> Community + social motivation.</p>
+            <p style="margin-top: 8px;">Centers on community interaction, enabling users to share runs, engage with others, and stay motivated through social connections.</p>
+            <ul class="list alternative-points">
+              <li><span class="check">+</span><span>High engagement</span></li>
+              <li><span class="check">+</span><span>Strong motivation through community</span></li>
+              <li><span class="check">+</span><span>Encourages long-term participation</span></li>
+            </ul>
+            <ul class="list legacy-alternative-list" aria-hidden="true">
               <li><span class="check">✓</span><span>Meets user requirements</span></li>
               <li><span class="check">✓</span><span>Supports motivation</span></li>
               <li><span class="check">✓</span><span>More feasible for Week 10</span></li>
             </ul>
           </article>
+        </div>
+
+        <div class="card lowfi-link-card reveal" style="margin-top: 24px;">
+          <div class="lowfi-content">
+            <div class="lowfi-mark">LF</div>
+            <div class="lowfi-copy">
+              <div class="sketch-board-kicker">Clickable prototype</div>
+              <h3>Low-Fi Prototype</h3>
+              <p class="small">A clickable Figma prototype showing the early interaction flow and low-fidelity layout exploration.</p>
+            </div>
+          </div>
+          <a class="prototype-link" href="https://www.figma.com/proto/ANHLr8nB8KilruTbDjZH1q/CPT208?node-id=0-1&t=kjcJap7oflLZrXSo-1" target="_blank" rel="noopener noreferrer">
+            <span>Open Figma Prototype</span>
+            <span class="prototype-url">figma.com/proto/ANHLr8nB8KilruTbDjZH1q/CPT208</span>
+          </a>
         </div>
       </div>
     </section>
@@ -1020,6 +1111,14 @@
     </div>
   </footer>
 
+  <div class="sketch-lightbox" id="sketchLightbox" aria-hidden="true">
+    <button class="sketch-lightbox-close" type="button" aria-label="Close sketch preview">x</button>
+    <figure class="sketch-lightbox-panel">
+      <img src="" alt="">
+      <figcaption></figcaption>
+    </figure>
+  </div>
+
   <script>
     /* ===== Reveal on scroll ===== */
     const revealItems = document.querySelectorAll('.reveal');
@@ -1032,6 +1131,60 @@
       });
     }, { threshold: 0.1 });
     revealItems.forEach(item => io.observe(item));
+
+    /* ===== Sketch gallery preview ===== */
+    const sketchLightbox = document.getElementById('sketchLightbox');
+    const sketchLightboxImg = sketchLightbox?.querySelector('img');
+    const sketchLightboxCaption = sketchLightbox?.querySelector('figcaption');
+    const sketchLightboxClose = sketchLightbox?.querySelector('.sketch-lightbox-close');
+    const sketchTiles = document.querySelectorAll('.sketch-tile');
+
+    const closeSketchLightbox = () => {
+      if (!sketchLightbox) return;
+      sketchLightbox.classList.remove('open');
+      sketchLightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    };
+
+    sketchTiles.forEach(tile => {
+      tile.addEventListener('click', () => {
+        const previewImg = tile.querySelector('img:not([hidden])');
+        if (!previewImg || !previewImg.naturalWidth || !sketchLightboxImg) return;
+
+        sketchLightboxImg.src = tile.dataset.sketchSrc || previewImg.src;
+        sketchLightboxImg.alt = previewImg.alt;
+        if (sketchLightboxCaption) {
+          sketchLightboxCaption.textContent = tile.dataset.sketchTitle || previewImg.alt;
+        }
+        sketchLightbox.classList.add('open');
+        sketchLightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    sketchLightboxClose?.addEventListener('click', closeSketchLightbox);
+    sketchLightbox?.addEventListener('click', event => {
+      if (event.target === sketchLightbox) closeSketchLightbox();
+    });
+    window.addEventListener('keydown', event => {
+      if (event.key === 'Escape') closeSketchLightbox();
+    });
+
+    /* ===== Alternative cards mouse glow ===== */
+    document.querySelectorAll('.alternative-card').forEach(card => {
+      card.addEventListener('mousemove', event => {
+        const rect = card.getBoundingClientRect();
+        const x = ((event.clientX - rect.left) / rect.width) * 100;
+        const y = ((event.clientY - rect.top) / rect.height) * 100;
+        card.style.setProperty('--mx', `${x}%`);
+        card.style.setProperty('--my', `${y}%`);
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.setProperty('--mx', '50%');
+        card.style.setProperty('--my', '20%');
+      });
+    });
 
     /* ===== Navigation ===== */
     const links = document.querySelectorAll('.nav-links a');
