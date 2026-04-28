@@ -140,11 +140,12 @@ section+section{border-top:1px solid var(--line)}
 .section-head p{margin-top:16px}
 
 /* ===== GRID / CARDS ===== */
-.g2,.g3,.g4{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.g1,.g2,.g3,.g4{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.g1{grid-template-columns:1fr}
 .g2{grid-template-columns:repeat(2,1fr)}
 .g3{grid-template-columns:repeat(3,1fr)}
 .g4{grid-template-columns:repeat(4,1fr)}
-.g2>*,.g3>*,.g4>*{background:var(--bg);padding:36px}
+.g1>*,.g2>*,.g3>*,.g4>*{background:var(--bg);padding:36px}
 
 .card{
   padding:36px;background:var(--surface);
@@ -1043,10 +1044,10 @@ footer{padding:60px 0;border-top:1px solid var(--line)}
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:900px){
-  .g2,.g3,.g4,.team-grid,.journey,.persona-grid,.before-after,.hero-stats{
+  .g1,.g2,.g3,.g4,.team-grid,.journey,.persona-grid,.before-after,.hero-stats{
     grid-template-columns:1fr;gap:20px;background:transparent;border:none;
   }
-  .g2>*,.g3>*,.g4>*,.team-card,.journey-step{border:1px solid var(--line)}
+  .g1>*,.g2>*,.g3>*,.g4>*,.team-card,.journey-step{border:1px solid var(--line)}
   .persona-quad{grid-template-columns:1fr}
   .sketch-board{padding:24px}
   .sketch-board-head{flex-direction:column;gap:14px}
