@@ -56,7 +56,7 @@
               <span>Team members</span>
             </div>
             <div class="stat">
-              <strong>5+</strong>
+              <strong>4</strong>
               <span>Academic papers</span>
             </div>
             <div class="stat">
@@ -100,47 +100,252 @@
 
         </div>
 
-        <div class="g2" style="margin-top: 24px;">
-          <article class="card reveal">
-            <div class="card-top">
-              <h3>Research gap: academic papers</h3>
-              <span class="chip">4 papers</span>
-            </div>
-            <div class="comparison-table">
-              <table>
-                <thead>
-                  <tr><th>Paper</th><th>What it did well</th><th>What it missed</th></tr>
-                </thead>
-                <tbody>
-                  <tr><td>Paper 01</td><td>Strong interface concept, clear engagement mechanism, useful evaluation method.</td><td>Limited inclusivity, weak long-term motivation, unclear deployment context.</td></tr>
-                  <tr><td>Paper 02</td><td>Good social interaction design, thoughtful feedback loop, relevant target group.</td><td>No playful progression system, little personalization, weak mobile experience.</td></tr>
-                  <tr><td>Paper 03</td><td>Interesting narrative framing, robust literature foundation, clear persona alignment.</td><td>Small sample size, limited evidence of iteration, no real-world deployment.</td></tr>
-                  <tr><td>Paper 04</td><td>Useful persuasive mechanics, easy onboarding, good visual hierarchy.</td><td>Lack of accessibility detail, low novelty, shallow reflection on ethics.</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </article>
+        <article class="card paper-review-section reveal" style="margin-top: 24px;">
+          <div class="card-top">
+            <h3>Research gap: academic papers</h3>
+            <span class="chip">4 papers</span>
+          </div>
+          <p class="small">
+            These papers help us understand how playful feedback, narrative framing, social motivation, and route recommendation can support Go Runners. We use them selectively because our project is not a pure fitness tracker: it focuses on beginner-friendly onsite running activities, clear routes, organizer support, and motivation after each run.
+          </p>
 
-          <article class="card reveal">
-            <div class="card-top">
-              <h3>Commercial product review</h3>
-              <span class="chip">4 products</span>
-            </div>
-            <div class="comparison-table">
-              <table>
-                <thead>
-                  <tr><th>Product</th><th>Strengths</th><th>Missed opportunities</th></tr>
-                </thead>
-                <tbody>
-                  <tr><td>Product A</td><td>Easy navigation, strong community features, polished interaction design.</td><td>Weak emotional design, not contextualized for your domain.</td></tr>
-                  <tr><td>Product B</td><td>Good rewards system, habit loop, satisfying visual feedback.</td><td>Does not address your user group’s pain points directly.</td></tr>
-                  <tr><td>Product C</td><td>Useful content presentation, strong discoverability, recognizable patterns.</td><td>Low playfulness and no collaborative experience.</td></tr>
-                  <tr><td>Product D</td><td>Good notifications, effective gamification, scalable architecture.</td><td>Accessibility issues and limited ethical transparency.</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </article>
-        </div>
+          <div class="paper-grid">
+            <article class="paper-card spotlight-card" data-accent="gold">
+              <div class="paper-meta">
+                <span>Paper 01</span>
+                <strong>Gamification</strong>
+              </div>
+              <h4>Xu et al. (2022)</h4>
+              <p class="paper-title">The Effects of mHealth-Based Gamification Interventions on Participation in Physical Activity: Systematic Review</p>
+              <p><strong>Why relevant:</strong> This review supports Go Runners' playful system direction because it explains how gamified feedback can influence physical activity participation. It is useful for designing badges, progress cards, and completion feedback, but it also reminds us to avoid overly competitive mechanics for beginners.</p>
+              <div class="paper-columns">
+                <div>
+                  <h5>Did well</h5>
+                  <ol>
+                    <li>Shows that gamification can increase motivation for physical activity.</li>
+                    <li>Summarizes playful elements such as points, badges, progress bars, and feedback loops.</li>
+                    <li>Provides a broad research background across many previous studies.</li>
+                  </ol>
+                </div>
+                <div>
+                  <h5>Missed</h5>
+                  <ol>
+                    <li>Focuses on general physical activity rather than onsite running activities.</li>
+                    <li>Does not deeply explain organizer-side event management.</li>
+                    <li>Gives limited guidance on how to make gamification supportive instead of competitive.</li>
+                  </ol>
+                </div>
+              </div>
+              <div class="paper-implication"><strong>Design implication:</strong> Go Runners should use light gamification such as progress cards, badges, and completion feedback, while avoiding leaderboards or ranking pressure that could discourage nervous beginners.</div>
+            </article>
+
+            <article class="paper-card spotlight-card" data-accent="ember">
+              <div class="paper-meta">
+                <span>Paper 02</span>
+                <strong>Narrative</strong>
+              </div>
+              <h4>Faric et al. (2021)</h4>
+              <p class="paper-title">Running app "Zombies, Run!" users' engagement with physical activity: A qualitative study</p>
+              <p><strong>Why relevant:</strong> This paper is directly related to running apps and shows how narrative, storyline, and characters can make running feel more immersive. For Go Runners, the value is not copying a zombie game, but using small story-like moments to make routes and achievements feel more meaningful.</p>
+              <div class="paper-columns">
+                <div>
+                  <h5>Did well</h5>
+                  <ol>
+                    <li>Focuses directly on a running app, so it is highly relevant to Go Runners.</li>
+                    <li>Shows how story and immersion can make running feel more enjoyable.</li>
+                    <li>Uses interviews to provide real user experience evidence.</li>
+                  </ol>
+                </div>
+                <div>
+                  <h5>Missed</h5>
+                  <ol>
+                    <li>Focuses more on individual running than group activity management.</li>
+                    <li>Does not cover route planning, meeting points, or onsite support.</li>
+                    <li>A strong game narrative may not fit users who prefer simple guidance and real-world clarity.</li>
+                  </ol>
+                </div>
+              </div>
+              <div class="paper-implication"><strong>Design implication:</strong> Go Runners can use lightweight narrative feedback such as route challenges, completion stories, and progress journeys, while keeping the main flow clear for users who simply want to join a suitable run.</div>
+            </article>
+
+            <article class="paper-card spotlight-card" data-accent="moss">
+              <div class="paper-meta">
+                <span>Paper 03</span>
+                <strong>Social motivation</strong>
+              </div>
+              <h4>Tsai et al. (2021)</h4>
+              <p class="paper-title">Running on a social exercise platform: Applying self-determination theory to increase motivation to participate in a sporting event</p>
+              <p><strong>Why relevant:</strong> This study connects running with social participation and shows how relatedness, encouragement, and event participation can influence usefulness and behavioral intention. This matches Go Runners' focus on helping beginners feel confident enough to join local group activities.</p>
+              <div class="paper-columns">
+                <div>
+                  <h5>Did well</h5>
+                  <ol>
+                    <li>Connects running with social participation, not only individual tracking.</li>
+                    <li>Uses self-determination theory, especially autonomy, competence, and relatedness.</li>
+                    <li>Shows encouragement and social presence can make running feel more connected.</li>
+                  </ol>
+                </div>
+                <div>
+                  <h5>Missed</h5>
+                  <ol>
+                    <li>Focuses less on practical organizer tools such as event setup, route publishing, and participant updates.</li>
+                    <li>Does not fully explore beginner anxiety, such as fear of being too slow.</li>
+                    <li>Gives limited detail about route guidance or wearable integration.</li>
+                  </ol>
+                </div>
+              </div>
+              <div class="paper-implication"><strong>Design implication:</strong> Go Runners should support social motivation softly through beginner labels, group encouragement, participant visibility, and simple event joining, without making beginners feel exposed or judged.</div>
+            </article>
+
+            <article class="paper-card spotlight-card" data-accent="aqua">
+              <div class="paper-meta">
+                <span>Paper 04</span>
+                <strong>Route recommendation</strong>
+              </div>
+              <h4>Issa et al. (2016)</h4>
+              <p class="paper-title">Preference based Filtering and Recommendations for Running Routes</p>
+              <p><strong>Why relevant:</strong> This paper focuses on recommending suitable running routes based on route features and user preferences, including distance, elevation, environment, road type, and running history. This supports Go Runners' need to help users judge whether an activity route is suitable before joining.</p>
+              <div class="paper-columns">
+                <div>
+                  <h5>Did well</h5>
+                  <ol>
+                    <li>Focuses directly on running routes, matching Go Runners better than a general fitness paper.</li>
+                    <li>Considers route features beyond distance, including environment and road type.</li>
+                    <li>Builds a recommendation approach based on user preferences and running history.</li>
+                  </ol>
+                </div>
+                <div>
+                  <h5>Missed</h5>
+                  <ol>
+                    <li>Does not discuss how users join organized running activities or communicate with organizers.</li>
+                    <li>Does not focus much on beginner confidence, anxiety, or fear of being too slow.</li>
+                    <li>Is more technical and less focused on playful experience or post-run engagement.</li>
+                  </ol>
+                </div>
+              </div>
+              <div class="paper-implication"><strong>Design implication:</strong> Go Runners should show route suitability through distance, difficulty, environment, route type, meeting point, and beginner-friendly labels, while adding the social joining and playful motivation that a route algorithm alone cannot provide.</div>
+            </article>
+          </div>
+        </article>
+
+        <article class="card product-review-section reveal" style="margin-top: 24px;">
+          <div class="card-top">
+            <h3>Commercial product review</h3>
+            <span class="chip">4 products</span>
+          </div>
+          <p class="small">
+            These products show useful patterns for tracking, coaching, route discovery, community, and event organization. The comparison also clarifies why Go Runners should focus on beginner-friendly onsite running activities rather than becoming a general fitness or event platform.
+          </p>
+
+          <div class="product-grid">
+            <article class="product-card spotlight-card" data-accent="ember">
+              <div class="product-head">
+                <span>Performance + community</span>
+                <h4>Strava</h4>
+              </div>
+              <div class="review-columns">
+                <div>
+                  <h5>Did well</h5>
+                  <ol>
+                    <li>Strong activity tracking and performance analysis.</li>
+                    <li>Supports route discovery, maps, clubs, challenges, and race courses.</li>
+                    <li>Builds a strong running community through sharing and clubs.</li>
+                  </ol>
+                </div>
+                <div>
+                  <h5>Missed for Go Runners</h5>
+                  <ol>
+                    <li>Can feel too competitive for beginner runners.</li>
+                    <li>Focuses more on tracking during or after exercise than pre-activity confidence.</li>
+                    <li>Club/event support is not centered on small beginner-friendly onsite runs.</li>
+                  </ol>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card spotlight-card" data-accent="gold">
+              <div class="product-head">
+                <span>Guided coaching</span>
+                <h4>Nike Run Club</h4>
+              </div>
+              <div class="review-columns">
+                <div>
+                  <h5>Did well</h5>
+                  <ol>
+                    <li>Provides guided runs with audio coaching and motivation.</li>
+                    <li>Offers training plans for different running goals.</li>
+                    <li>Uses encouraging coach-led content that helps beginners.</li>
+                  </ol>
+                </div>
+                <div>
+                  <h5>Missed for Go Runners</h5>
+                  <ol>
+                    <li>Focuses more on individual training than local onsite group activities.</li>
+                    <li>Does not strongly support organizers creating and managing events.</li>
+                    <li>Route discovery and local meeting-point support are not the main focus.</li>
+                  </ol>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card spotlight-card" data-accent="moss">
+              <div class="product-head">
+                <span>Fitness content + social</span>
+                <h4>Keep</h4>
+              </div>
+              <div class="review-columns">
+                <div>
+                  <h5>Did well</h5>
+                  <ol>
+                    <li>Provides broad fitness and running content with activity tracking.</li>
+                    <li>Supports social sharing of progress and exercise experiences.</li>
+                    <li>Includes running-related functions such as nearby routes and team running.</li>
+                  </ol>
+                </div>
+                <div>
+                  <h5>Missed for Go Runners</h5>
+                  <ol>
+                    <li>Running may feel less focused because the platform covers many fitness types.</li>
+                    <li>Content-heavy flows may overwhelm users who only want to join a simple run.</li>
+                    <li>Organizer-side support for small local running events is not clear enough.</li>
+                  </ol>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card spotlight-card" data-accent="aqua">
+              <div class="product-head">
+                <span>Local events</span>
+                <h4>Meetup</h4>
+              </div>
+              <div class="review-columns">
+                <div>
+                  <h5>Did well</h5>
+                  <ol>
+                    <li>Helps users discover local events and groups by shared interest.</li>
+                    <li>Supports organizers in creating groups, scheduling events, and managing members.</li>
+                    <li>Focuses on real-world social participation and community building.</li>
+                  </ol>
+                </div>
+                <div>
+                  <h5>Missed for Go Runners</h5>
+                  <ol>
+                    <li>Not designed specifically for running route, pace, or distance guidance.</li>
+                    <li>Does not provide training support or post-run progress feedback.</li>
+                    <li>Helps users find events, but does not make the run itself playful or guided.</li>
+                  </ol>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="design-opportunity">
+            <div class="chip">Design opportunity</div>
+            <p>
+              Existing products separate the key needs: Strava is strong in performance and community, Nike Run Club is strong in coaching, Keep is strong in fitness content, and Meetup is strong in event organization. Go Runners can position itself as a focused system that combines beginner-friendly running guidance, local onsite activity joining, route clarity, organizer support, and playful post-run motivation.
+            </p>
+          </div>
+        </article>
 
         <div class="card reveal" style="margin-top: 24px;">
           <div class="card-top">
@@ -150,13 +355,13 @@
           <p>
             Go Runners serves two connected stakeholder groups: beginner runners who need confidence and guidance, and activity organizers who need clearer tools for attracting participants, communicating event details, managing routes, and keeping runners engaged after each event.
           </p>
-          <div class="g2" style="margin-top: 20px;">
-            <article class="card">
+          <div class="g2 spotlight-grid" style="margin-top: 20px;">
+            <article class="card spotlight-card" data-accent="ember">
               <div class="chip">Primary Users</div>
               <h3 style="margin-top: 14px;">Runners</h3>
               <p style="margin-top: 8px;">Beginner runners, casual runners, students, and local residents who want to discover running events, check routes, join activities, track progress, and receive supportive feedback.</p>
             </article>
-            <article class="card">
+            <article class="card spotlight-card" data-accent="aqua">
               <div class="chip">Secondary Users</div>
               <h3 style="margin-top: 14px;">Activity Organizers</h3>
               <p style="margin-top: 8px;">Running club organizers, student activity leaders, community sports organizers, and event volunteers who create events, set meeting points and routes, manage participants, and send reminders.</p>
@@ -337,20 +542,20 @@
           </div>
         </div>
 
-        <div class="g3" style="margin-top: 24px;">
-          <article class="card reveal">
+        <div class="g3 requirement-cards" style="margin-top: 24px;">
+          <article class="card spotlight-card reveal" data-accent="gold">
             <div class="chip">Must-have 01</div>
             <h3 style="margin-top: 14px;">Beginner-Friendly Activity Discovery</h3>
             <p style="margin-top: 8px;">Go Runners must help runners find suitable activities based on distance, difficulty, pace, location, and time, using clear labels such as beginner-friendly, short route, or social run.</p>
             <p class="small" style="margin-top: 8px;"><strong>Linked user:</strong> Emily<br><strong>Linked pain point:</strong> Users do not know which activity is suitable.<br><strong>Possible feature:</strong> Activity cards, difficulty tags, route preview.</p>
           </article>
-          <article class="card reveal">
+          <article class="card spotlight-card reveal" data-accent="aqua">
             <div class="chip">Must-have 02</div>
             <h3 style="margin-top: 14px;">Location-Based Onsite Guidance</h3>
             <p style="margin-top: 8px;">Go Runners must provide clear onsite support before and during each running activity, including route maps, meeting points, distance, safety reminders, and progress tracking through location or wearable data.</p>
             <p class="small" style="margin-top: 8px;"><strong>Linked user:</strong> Runners and organizers<br><strong>Linked pain point:</strong> Users may feel confused about routes and onsite instructions.<br><strong>Possible feature:</strong> Route map, live location, wearable tracking, safety reminder.</p>
           </article>
-          <article class="card reveal">
+          <article class="card spotlight-card reveal" data-accent="moss">
             <div class="chip">Must-have 03</div>
             <h3 style="margin-top: 14px;">Motivation and Return Experience</h3>
             <p style="margin-top: 8px;">Go Runners must encourage users to continue after the activity through simple completion feedback, personal progress, small achievements, and next activity recommendations.</p>
@@ -1203,8 +1408,8 @@
       if (event.key === 'Escape') closeSketchLightbox();
     });
 
-    /* ===== Alternative cards mouse glow ===== */
-    document.querySelectorAll('.alternative-card').forEach(card => {
+    /* ===== Mouse-follow card glow ===== */
+    document.querySelectorAll('.alternative-card, .spotlight-card, .journey-step').forEach(card => {
       card.addEventListener('mousemove', event => {
         const rect = card.getBoundingClientRect();
         const x = ((event.clientX - rect.left) / rect.width) * 100;
