@@ -19,7 +19,7 @@
         <div class="brand">
           <div>
             <div>CPT208 Process Portfolio</div>
-            <div class="sub">Human-Centric Computing · Week 10 Submission</div>
+            <div class="sub">Human-Centric Computing</div>
           </div>
         </div>
         <div class="nav-links">
@@ -40,11 +40,11 @@
     <section class="hero" id="overview">
       <div class="container">
         <div class="hero-content reveal">
-          <div class="eyebrow">Designing Playful Experiences · Group B2-1</div>
-          <h1>Welcome to our Process Portfolio</h1>
-          <p class="hero-sub">
-            This template is designed for the CPT208 process portfolio: a hosted GitHub page that documents your motivation, research, personas, user journey, alternatives, prototype, evaluation, team contributions, and technical reflection in one polished experience.
-          </p>
+          <div class="eyebrow">Designing Playful Experiences · Group C1-4</div>
+          <h1 class="typing-title" id="heroTypingTitle" aria-label="Welcome to our Process Portfolio">
+            <span class="typing-ghost">Welcome to our Process Portfolio</span>
+            <span class="typing-text" aria-hidden="true"></span>
+          </h1>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#motivation"><span>Explore the portfolio</span></a>
             <a class="btn btn-secondary" href="#prototype"><span>View prototype section</span></a>
@@ -1358,6 +1358,37 @@
   </div>
 
   <script>
+    /* ===== Hero typewriter title ===== */
+    const heroTypingTitle = document.getElementById('heroTypingTitle');
+    const heroTypingText = heroTypingTitle?.querySelector('.typing-text');
+    const heroTitleText = heroTypingTitle?.getAttribute('aria-label') || '';
+
+    if (heroTypingText) {
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (reduceMotion) {
+        heroTypingText.textContent = heroTitleText;
+        heroTypingTitle.classList.add('typing-complete');
+      } else {
+        let letterIndex = 0;
+
+        const typeHeroTitle = () => {
+          heroTypingText.textContent = heroTitleText.slice(0, letterIndex);
+          letterIndex += 1;
+
+          if (letterIndex <= heroTitleText.length) {
+            window.setTimeout(typeHeroTitle, 28);
+          } else {
+            window.setTimeout(() => {
+              heroTypingTitle.classList.add('typing-complete');
+            }, 450);
+          }
+        };
+
+        window.setTimeout(typeHeroTitle, 180);
+      }
+    }
+
     /* ===== Reveal on scroll ===== */
     const revealItems = document.querySelectorAll('.reveal');
     const io = new IntersectionObserver((entries) => {

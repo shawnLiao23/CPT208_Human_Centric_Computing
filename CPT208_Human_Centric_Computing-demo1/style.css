@@ -103,6 +103,30 @@ strong{color:rgba(255,255,255,.8)}
   text-align:center;
   margin:0 auto;
 }
+.typing-title{
+  position:relative;
+}
+.typing-ghost{
+  visibility:hidden;
+}
+.typing-text{
+  position:absolute;
+  inset:0;
+}
+.typing-text::after{
+  content:"";
+  display:inline-block;
+  width:.08em;
+  height:.82em;
+  margin-left:.08em;
+  background:#fff;
+  transform:skewX(-10deg) translateY(.08em);
+  animation:type-caret .7s steps(1,end) infinite;
+}
+.typing-complete .typing-text::after{
+  opacity:0;
+  animation:none;
+}
 .hero-sub{
   margin:28px auto 0;max-width:54ch;font-size:1.08rem;color:rgba(255,255,255,.65);
 }
@@ -123,6 +147,10 @@ strong{color:rgba(255,255,255,.8)}
 .btn-primary:hover{background:#ff8f40;box-shadow:0 0 20px rgba(249,115,22,.4)}
 .btn-secondary{background:rgba(255,255,255,.05);color:#fff;border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(10px)}
 .btn-secondary:hover{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.1)}
+
+@keyframes type-caret{
+  50%{opacity:0}
+}
 
 /* Athletic Stats */
 .hero-stats{
