@@ -517,15 +517,16 @@ ul.list{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:14px}
 .paper-card h4{
   margin:0;
   font-size:1.05rem;
+  line-height:1.45;
 }
-.paper-title{
+.paper-author{
   margin-top:8px;
   color:rgba(255,255,255,.72);
   font-size:.86rem;
   font-style:italic;
   line-height:1.55;
 }
-.paper-card > p:not(.paper-title){
+.paper-card > p:not(.paper-author){
   margin-top:14px;
   font-size:.86rem;
   line-height:1.6;
@@ -879,38 +880,22 @@ ul.list{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:14px}
 .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:20px}
 .evidence-gallery{grid-template-columns:repeat(5,minmax(0,1fr));align-items:start}
 .evidence-gallery .gallery-card::before{display:none}
-.evidence-gallery .sketch{
-  position:relative;
+.evidence-photo{
+  display:block;
   width:100%;
   aspect-ratio:4 / 3;
-  border:1px dashed rgba(255,255,255,.22);
+  object-fit:cover;
+  border:1px solid rgba(255,255,255,.16);
   border-radius:8px;
-  background:
-    linear-gradient(135deg,rgba(255,255,255,.055),rgba(255,255,255,.018)),
-    repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 1px,transparent 1px 14px);
-  overflow:hidden;
+  background:rgba(255,255,255,.04);
 }
-.evidence-gallery .sketch::before{
-  content:"";
-  position:absolute;
-  inset:12px;
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:6px;
-}
-.evidence-gallery .sketch::after{
-  content:"Photo";
-  position:absolute;
-  inset:0;
-  display:grid;
-  place-items:center;
-  color:rgba(255,255,255,.42);
-  font-size:.72rem;
-  font-weight:700;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-}
-.evidence-gallery .gallery-card p{
+.evidence-caption{
+  margin-top:10px;
   min-height:2.8em;
+  color:var(--muted);
+  font-size:.82rem;
+  font-weight:600;
+  line-height:1.35;
 }
 .sketch-board{
   position:relative;
